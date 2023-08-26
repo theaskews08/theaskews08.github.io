@@ -1,0 +1,24 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    font-size: 50px;
+  }
+  
+  #searchInput {
+    font-size: 45px;
+  }
+  
+  #outputLabel {
+    font-size: 45px;
+  }
+  
+  button {
+    font-size: 45px;
+  }
+  
+  p {
+    font-size: 33px;
+  }
+  
