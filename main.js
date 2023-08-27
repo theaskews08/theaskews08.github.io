@@ -1,9 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Simulate reading from a CSV file (replace this with actual CSV reading)
   const df = {
-    { "Plu Code": "4011", "Name": "Banana" },
-    { "Plu Code": "4012", "Name": "Apple" },
-    {"Alkmene Apples3000","" }, 
+    Plu Code, Name
     {"3001","Small Aurora/Southern Rose Apples"  },
     {"3002","Cantared Apples"  },
     {"3003","D'Estivale Apples"  },
