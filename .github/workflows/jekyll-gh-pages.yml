@@ -47,4 +47,4 @@
      steps: 
        - name: Deploy to GitHub Pages 
          id: deployment 
-         uses: actions/deploy-pages@v2 Sample workflow for building and deploying a Jekyll site to GitHub Page
+         uses: actions/deploy-pages@v2 Sample workflow for building and deploying a Jekyll site to GitHub Pages
