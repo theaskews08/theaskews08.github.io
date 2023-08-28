@@ -20,7 +20,7 @@ searchInput.addEventListener('input', function() {
 
   // Show the first 5 matched items as suggestions
   for(let i = 0; i < Math.min(5, foundItems.length); i++) {
-    outputLabel.innerHTML += `${foundItems[i].Name} (PLU Code: ${foundItems[i]['PLU Code']})<br>`;
+    outputLabel.innerHTML += `<a href="https://www.google.com/search?q=${foundItems[i].Name}">${foundItems[i].Name}</a> (PLU Code: ${foundItems[i]['PLU Code']})<br>`;
   }
   
   if (foundItems.length === 0) {
