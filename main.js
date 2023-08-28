@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const df = [
     { "PLU Code": "4011", "Name": "Banana" },
     { "PLU Code": "4012", "Name": "Apple" },
-    // Add more items here
+    { "PLU Code,Name": "3000,Alkmene Apples" }
   ];
 
   const searchInput = document.getElementById("searchInput");
