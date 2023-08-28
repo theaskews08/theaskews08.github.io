@@ -1,5 +1,5 @@
 // Fetch PLU data from somewhere, dummy data for now
-let plu_codes.json = {}; // This should be filled by your fetchPLU.js
+let pluData = {}; // This should be filled by your fetchPLU.js
 
 // Get DOM elements
 const searchInput = document.getElementById('searchInput');
@@ -11,7 +11,7 @@ const pluList = document.getElementById('pluList');
 // Event Listeners
 searchInput.addEventListener('input', function() {
   const searchValue = searchInput.value;
-  const plu = plu_codes.json[searchValue];
+  const plu = pluData[searchValue];
   
   if (plu) {
     outputLabel.textContent = `Found: ${plu}`;
@@ -32,6 +32,4 @@ exitButton.addEventListener('click', function() {
 // Populate PLU list (you can do this once your fetchPLU.js fetches the actual data)
 for (let code in pluData) {
   const li = document.createElement('li');
-  li.textContent = `${code}: ${plu_codes.json[code]}`;
-  pluList.appendChild(li);
-}
+  li
