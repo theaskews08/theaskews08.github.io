@@ -32,4 +32,6 @@ exitButton.addEventListener('click', function() {
 // Populate PLU list (you can do this once your fetchPLU.js fetches the actual data)
 for (let code in pluData) {
   const li = document.createElement('li');
-  li
+  li.textContent = `${code}: ${pluData[code]}`;
+  pluList.appendChild(li);
+}
