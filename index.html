@@ -14,5 +14,9 @@
   <button id="clearButton">Clear</button>
   <button id="exitButton">Exit</button>
   <p>Created by Brian Askew</p>
-</body>
+</body>fetch('https://raw.githubusercontent.com/theaskews08/theaskews08.github.io/main/plu_codes.json')
+  .then(response => response.json())
+  .then(data => {
+    console.log(data); // Output: {apple: "4011", banana: "4012", orange: "4013"}
+  });
 </html>
