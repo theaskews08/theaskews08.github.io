@@ -6109,3 +6109,15 @@ document.addEventListener("DOMContentLoaded", function () {
     window.close();
   });
 });
+document.addEventListener("DOMContentLoaded", function() {
+  const pluCodes = [4011, 4012, 4013, 4014];
+  function displayPLUCodes(pluCodes) {
+    const listElement = document.getElementById('pluList');
+    pluCodes.forEach(code => {
+      const listItem = document.createElement('li');
+      listItem.textContent = code;
+      listElement.appendChild(listItem);
+    });
+  }
+  displayPLUCodes(pluCodes);
+});
