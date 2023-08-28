@@ -1,7 +1,6 @@
-// Fetch PLU data from somewhere
-let pluData = {}; // This will be filled by fetchPLU.js
+let pluData = {};
 
-// Fetching the PLU data from the JSON file
+// Fetch PLU data
 fetch('./plu_data.json')
   .then(response => response.json())
   .then(data => {
@@ -9,19 +8,17 @@ fetch('./plu_data.json')
   })
   .catch(error => console.error('Error fetching PLU data:', error));
 
-// Get DOM elements
 const searchInput = document.getElementById('searchInput');
 const outputLabel = document.getElementById('outputLabel');
 const clearButton = document.getElementById('clearButton');
 const exitButton = document.getElementById('exitButton');
 
-// Event Listeners
 searchInput.addEventListener('input', function() {
   const searchValue = searchInput.value;
   const plu = pluData[searchValue];
   
   if (plu) {
-    outputLabel.textContent = `Found: ${plu['Name']}`;  // Using the "Name" property
+    outputLabel.textContent = `Found: ${plu.Name}`;
   } else {
     outputLabel.textContent = 'Not Found';
   }
