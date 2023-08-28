@@ -1,24 +1,64 @@
+/* CSS Reset or Normalization */
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  appearance: button;
+}
+/* ... (other reset styles) */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  appearance: button;
+  font: inherit;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Custom Styles */
 body {
-    font-family: Arial, sans-serif;
-  }
-  
-  h1 {
-    font-size: 50px;
-  }
-  
-  #searchInput {
-    font-size: 45px;
-  }
-  
-  #outputLabel {
-    font-size: 45px;
-  }
-  
-  button {
-    font-size: 45px;
-  }
-  
-  p {
-    font-size: 33px;
-  }
-  
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 50vw; /* 50% of the viewport width */
+  height: auto; /* maintain aspect ratio */
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  font-size: 24px;
+  padding: 10px;
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+div#outputLabel {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+button {
+  font-size: 24px;
+  padding: 10px 20px;
+  margin: 10px;
+}
+
+p {
+  font-size: 18px;
+}
