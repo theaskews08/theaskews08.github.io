@@ -1,5 +1,14 @@
-// Fetch PLU data from somewhere, dummy data for now
-let pluData = {}; // This should be filled by your fetchPLU.js
+// Fetch PLU data from somewhere
+let pluData = {}; // This will be filled by fetchPLU.js
+
+// Fetching the PLU data from the JSON file
+fetch('./plu_data.json')
+  .then(response => response.json())
+  .then(data => {
+    pluData = data;
+    populatePLUList();
+  })
+  .catch(error => console.error('Error fetching PLU data:', error));
 
 // Get DOM elements
 const searchInput = document.getElementById('searchInput');
@@ -14,7 +23,7 @@ searchInput.addEventListener('input', function() {
   const plu = pluData[searchValue];
   
   if (plu) {
-    outputLabel.textContent = `Found: ${plu}`;
+    outputLabel.textContent = `Found: ${plu.name}`;  // Assuming the PLU object has a "name" property
   } else {
     outputLabel.textContent = 'Not Found';
   }
@@ -29,9 +38,11 @@ exitButton.addEventListener('click', function() {
   window.close();
 });
 
-// Populate PLU list (you can do this once your fetchPLU.js fetches the actual data)
-for (let code in pluData) {
-  const li = document.createElement('li');
-  li.textContent = `${code}: ${pluData[code]}`;
-  pluList.appendChild(li);
+// Function to populate the PLU list
+function populatePLUList() {
+  for (let code in pluData) {
+    const li = document.createElement('li');
+    li.textContent = `${code}: ${pluData[code].name}`;  // Assuming the PLU object has a "name" property
+    pluList.appendChild(li);
+  }
 }
