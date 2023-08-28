@@ -9,23 +9,21 @@ const exitButton = document.getElementById('exitButton');
 
 // Event Listeners
 searchInput.addEventListener('input', function() {
-  const searchTerm = searchInput.value;
-  let foundItem;
+  const searchTerm = searchInput.value.toLowerCase();
+  let foundItems = pluData.filter(item => item.Name.toLowerCase().includes(searchTerm));
   
-  // Search by PLU Code if searchTerm is a number
-  if (!isNaN(searchTerm)) {
-    foundItem = pluData.find(item => item['PLU Code'] === parseInt(searchTerm));
-    if (foundItem) {
-      outputLabel.textContent = `Name: ${foundItem.Name}`;
-      return;
-    }
-  }
+  // Sort the items alphabetically
+  foundItems.sort((a, b) => a.Name.localeCompare(b.Name));
+  
+  // Clear the output label
+  outputLabel.innerHTML = '';
 
-  // Search by Name if searchTerm is text
-  foundItem = pluData.find(item => item.Name.toLowerCase().includes(searchTerm.toLowerCase()));
-  if (foundItem) {
-    outputLabel.textContent = `PLU Code: ${foundItem['PLU Code']}`;
-  } else {
+  // Show the first 5 matched items as suggestions
+  for(let i = 0; i < Math.min(5, foundItems.length); i++) {
+    outputLabel.innerHTML += `${foundItems[i].Name} (PLU Code: ${foundItems[i]['PLU Code']})<br>`;
+  }
+  
+  if (foundItems.length === 0) {
     outputLabel.textContent = 'Not found';
   }
 });
