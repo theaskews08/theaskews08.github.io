@@ -1,42 +1,22 @@
-let pluData = [];
+document.addEventListener("DOMContentLoaded", function() {
+  // Load CSV file
+  Papa.parse("data.csv", {
+    header: true,
+    dynamicTyping: true,
+    complete: function(results) {
+      const data = results.data;
+      const searchInput = document.getElementById("searchInput");
+      const outputLabel = document.getElementById("outputLabel");
 
-async function fetchData() {
-  try {
-    const response = await fetch('./plu_data.json');
-    pluData = await response.json();
-    initializeApp();
-  } catch (error) {
-    console.error('Error fetching PLU data:', error);
-  }
-}
-
-function initializeApp() {
-  // Get DOM elements
-  const searchInput = document.getElementById('searchInput');
-  const outputLabel = document.getElementById('outputLabel');
-  const clearButton = document.getElementById('clearButton');
-  const exitButton = document.getElementById('exitButton');
-
-  // Event Listeners
-  searchInput.addEventListener('input', function() {
-    const searchValue = searchInput.value.toLowerCase();
-    const plu = pluData.find(item => item.Name.toLowerCase().includes(searchValue));
-    
-    if (plu) {
-      outputLabel.textContent = `Found: ${plu.Name}, PLU Code: ${plu['PLU Code']}`;
-    } else {
-      outputLabel.textContent = 'Not Found';
+      searchInput.addEventListener("input", function() {
+        const searchTerm = searchInput.value;
+        const foundItem = data.find(item => item["Plu code"] === searchTerm);
+        if (foundItem) {
+          outputLabel.innerHTML = `<a href="https://www.google.com/search?q=${foundItem.Name} recipes">${foundItem.Name}</a>`;
+        } else {
+          outputLabel.textContent = "Not found";
+        }
+      });
     }
   });
-
-  clearButton.addEventListener('click', function() {
-    searchInput.value = '';
-    outputLabel.textContent = '';
-  });
-
-  exitButton.addEventListener('click', function() {
-    window.close();
-  });
-}
-
-fetchData();
+});
