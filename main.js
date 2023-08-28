@@ -1,9 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Simulate reading from a CSV file (replace this with actual CSV reading)
   const df = [
-[
-  {
-    "PLU Code": "Alkmene Apples3000",
+    {"PLU Code": "Alkmene Apples3000",
     "Name": ""
   },
   {
@@ -6081,10 +6079,8 @@ document.addEventListener("DOMContentLoaded", function () {
   {
     "PLU Code": 4961,
     "Name": "Large Yellow Mango"
-  }
-]
-   ];
-
+  }];
+  
   const searchInput = document.getElementById("searchInput");
   const outputLabel = document.getElementById("outputLabel");
   const clearButton = document.getElementById("clearButton");
