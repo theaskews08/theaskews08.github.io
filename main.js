@@ -23,7 +23,7 @@ searchInput.addEventListener('input', function() {
   const plu = pluData[searchValue];
   
   if (plu) {
-    outputLabel.textContent = `Found: ${plu.name}`;  // Assuming the PLU object has a "name" property
+    outputLabel.textContent = `Found: ${plu['Name']}`;  // Using the "Name" property
   } else {
     outputLabel.textContent = 'Not Found';
   }
@@ -42,7 +42,7 @@ exitButton.addEventListener('click', function() {
 function populatePLUList() {
   for (let code in pluData) {
     const li = document.createElement('li');
-    li.textContent = `${code}: ${pluData[code].name}`;  // Assuming the PLU object has a "name" property
+    li.textContent = `${code}: ${pluData[code]['Name']}`;  // Using the "Name" property
     pluList.appendChild(li);
   }
 }
