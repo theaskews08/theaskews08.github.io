@@ -1,4 +1,4 @@
-fetch('path/to/your/plu_data.json')
+fetch('const filePath = './plu_data.json')
   .then(response => response.json())
   .then(data => {
     pluData = data; // Make sure 'pluData' is declared in the global scope or accessible here.
