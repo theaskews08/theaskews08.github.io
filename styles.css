@@ -4,7 +4,7 @@
   -webkit-appearance: button;
   appearance: button;
 }
-/* ... (other reset styles) */
+
 ::-webkit-file-upload-button {
   -webkit-appearance: button;
   appearance: button;
@@ -23,12 +23,12 @@ body {
   padding: 0;
   background-color: black;
   color: white;
-  border: 5px solid red; /* Red border around the main window */
+  border: 5px solid red;
 }
 
 img {
-  width: 300px; /* Shrink the logo */
-  height: auto; /* maintain aspect ratio */
+  width: 300px;
+  height: auto;
   margin-bottom: 20px;
 }
 
@@ -47,7 +47,7 @@ input[type="text"] {
 div#outputLabel {
   font-size: 24px;
   margin-bottom: 20px;
-  color: red; /* Change the color of the output text to red */
+  color: red;
 }
 
 button {
@@ -69,4 +69,14 @@ button:hover {
 
 p {
   font-size: 18px;
+}
+
+/* Hyperlink colors */
+a {
+  color: limegreen;  /* Set the hyperlink color to lime green */
+  text-decoration: none;  /* Removes underline */
+}
+
+a:hover {
+  text-decoration: underline;  /* Adds underline when hovered */
 }
