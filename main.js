@@ -1,46 +1,22 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const searchInput = document.getElementById("searchInput");
-  const outputLabel = document.getElementById("outputLabel");
-  const clearButton = document.getElementById("clearButton");
-  const exitButton = document.getElementById("exitButton");
+document.addEventListener("DOMContentLoaded", function() {
+  // Load CSV file
+  Papa.parse("data.csv", {
+    header: true,
+    dynamicTyping: true,
+    complete: function(results) {
+      const data = results.data;
+      const searchInput = document.getElementById("searchInput");
+      const outputLabel = document.getElementById("outputLabel");
 
-  // Sample data in CSV format
-  const csvData = `4011, Banana
-  4012, Apple
-  4013, Fuji Apple
-  4014, Orange`;
-
-  // Convert CSV to array of objects
-  const data = csvData.split("\n").map((line) => {
-    const [pluCode, name] = line.split(", ");
-    return { pluCode, name };
-  });
-
-  // Event listener for search input
-  searchInput.addEventListener("input", function () {
-    const query = searchInput.value.toLowerCase().trim();
-    const queryTokens = query.split(" ");
-
-    const result = data.find((item) => {
-      const nameTokens = item.name.toLowerCase().split(" ");
-      return queryTokens.every((token) => nameTokens.includes(token));
-    });
-
-    if (result) {
-      outputLabel.innerHTML = `PLU Code: ${result.pluCode}<br>Name: <a href="https://www.google.com/search?q=${result.name} recipes">${result.name}</a>`;
-    } else {
-      outputLabel.textContent = "No match found";
+      searchInput.addEventListener("input", function() {
+        const searchTerm = searchInput.value;
+        const foundItem = data.find(item => item["Plu code"] === searchTerm);
+        if (foundItem) {
+          outputLabel.innerHTML = `<a href="https://www.google.com/search?q=${foundItem.Name} recipes">${foundItem.Name}</a>`;
+        } else {
+          outputLabel.textContent = "Not found";
+        }
+      });
     }
-  });
-
-  // Event listener for clear button
-  clearButton.addEventListener("click", function () {
-    searchInput.value = "";
-    outputLabel.textContent = "";
-  });
-
-  // Event listener for exit button
-  exitButton.addEventListener("click", function () {
-    window.close();
   });
 });
