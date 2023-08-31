@@ -37,10 +37,28 @@ h1 {
   margin-bottom: 20px;
 }
 
+/* Search box styles */
+.search-box {
+  position: relative;
+  width: 80%;
+  margin: auto;
+}
+
+/* Magnifying glass icon styles */
+.icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+}
+
+/* Search input styles */
 input[type="text"] {
+  padding-left: 40px; /* Make room for the magnifying glass icon */
   font-size: 24px;
   padding: 10px;
-  width: 80%;
+  width: 100%;
   margin-bottom: 20px;
 }
 
@@ -79,23 +97,4 @@ a {
 
 a:hover {
   text-decoration: underline;  /* Adds underline when hovered */
-}
-
-/* New CSS for Magnifying Glass Icon */
-.search-box {
-  position: relative;
-}
-
-.icon {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.2em;
-  pointer-events: none;
-  color: gray;
-}
-
-input[type="text"] {
-  padding-right: 30px; /* Make room for the icon */
 }
