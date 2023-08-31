@@ -1,26 +1,4 @@
-Existing CSS */
-
-/* ... */
-
-/* New CSS for Magnifying Glass Icon */
-
-.search-box {
-  position: relative;
-}
-
-.icon {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.2em;
-  pointer-events: none;
-  color: gray;
-}
-
-input[type="text"] {
-  padding-right: 30px; /* Make room for the icon */
-}Here's your complete styles.css file with the new additions:/* CSS Reset or Normalization */
+/* CSS Reset or Normalization */
 [type="reset"],
 [type="submit"] {
   -webkit-appearance: button;
