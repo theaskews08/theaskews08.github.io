@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ... other head elements ... -->
   <meta charset="UTF-8">
   <title>PRODUCE PLU LOOKUP TOOL</title>
   <link rel="stylesheet" href="styles.css">
@@ -11,7 +10,10 @@
 <body style="background-color: black; color: white;">
   <img src="logo.png" alt="Logo">
   <h1>PRODUCE PLU LOOKUP TOOL</h1>
-  <input id="searchInput" type="text" placeholder="Search...">
+  <div class="search-box">
+    <input id="searchInput" type="text" placeholder="Search...">
+    <span class="icon">&#128269;</span> <!-- Magnifying glass icon -->
+  </div>
   <div id="outputLabel"></div>
   <button id="clearButton">Clear</button>
   <button id="exitButton">Exit</button>
