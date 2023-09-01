@@ -1,100 +1,23 @@
-/* CSS Reset or Normalization */
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button;
-  appearance: button;
-}
-
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  appearance: button;
-  font: inherit;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-/* Custom Styles */
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  background-color: black;
-  color: white;
-  border: 5px solid red;
-}
-
-img {
-  width: 300px;
-  height: auto;
-  margin-bottom: 20px;
-}
-
-h1 {
-  font-size: 36px;
-  margin-bottom: 20px;
-}
-
-/* Search box styles */
-.search-box {
-  position: relative;
-  width: 80%;
-  margin: auto;
-}
-
-/* Magnifying glass icon styles */
-.icon {
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 24px;
-}
-
-/* Search input styles */
-input[type="text"] {
-  padding-left: 40px; /* Make room for the magnifying glass icon */
-  font-size: 24px;
-  padding: 10px;
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-div#outputLabel {
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: red;
-}
-
-button {
-  font-size: 24px;
-  padding: 10px 20px;
-  margin: 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
-button:hover {
-  background-color: #0056b3;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-p {
-  font-size: 18px;
-}
-
-/* Hyperlink colors */
-a {
-  color: limegreen;  /* Set the hyperlink color to lime green */
-  text-decoration: none;  /* Removes underline */
-}
-
-a:hover {
-  text-decoration: underline;  /* Adds underline when hovered */
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PRODUCE PLU LOOKUP TOOL</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="fetchPLU.js" defer></script>
+  <script src="main.js" defer></script>
+</head>
+<body style="background-color: black; color: white;">
+  <img src="logo.png" alt="Logo">
+  <h1>PRODUCE PLU LOOKUP TOOL</h1>
+  <div class="search-box">
+    <span class="icon">&#128269;</span> <!-- Magnifying glass icon -->
+    <input id="searchInput" type="text" placeholder="">
+  </div>
+  <div id="outputLabel"></div>
+  <button id="clearButton">Clear</button>
+  <button id="exitButton">Exit</button>
+  <p>Created by Brian Askew</p>
+  <ul id="pluList"></ul>
+</body>
+</html>
