@@ -10,7 +10,10 @@ const exitButton = document.getElementById('exitButton');
 // Event Listeners
 searchInput.addEventListener('input', function() {
   const searchTerm = searchInput.value.toLowerCase();
-  let foundItems = pluData.filter(item => item.Name.toLowerCase().includes(searchTerm));
+  let foundItems = pluData.filter(item => 
+    item.Name.toLowerCase().includes(searchTerm) || 
+    item['PLU Code'].toLowerCase().includes(searchTerm)
+  );
   
   // Sort the items alphabetically
   foundItems.sort((a, b) => a.Name.localeCompare(b.Name));
