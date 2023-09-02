@@ -1,35 +1,48 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const searchInput = document.getElementById("searchInput");
-  const outputLabel = document.getElementById("outputLabel");
-  const clearButton = document.getElementById("clearButton");
-  const exitButton = document.getElementById("exitButton");
+// Initialize empty array to hold PLU data
+let pluData = [];
 
-  // Sample data, replace with your actual data
-  const pluData = [
-    { plu: "4011", name: "Banana" },
-    { plu: "4131", name: "Apple" },
-    // ... more data
-  ];
+// Get DOM elements
+const searchInput = document.getElementById('searchInput');
+const outputLabel = document.getElementById('outputLabel');
+const clearButton = document.getElementById('clearButton');
+const exitButton = document.getElementById('exitButton');
 
-  searchInput.addEventListener("input", () => {
-    const query = searchInput.value.toLowerCase().trim();
-    const result = pluData.find(
-      (item) => item.plu === query || item.name.toLowerCase() === query
-    );
-
-    if (result) {
-      outputLabel.innerHTML = `PLU Code: ${result.plu}, Name: ${result.name}`;
-    } else {
-      outputLabel.innerHTML = "No match found";
-    }
+// Fetch PLU data from the API
+fetch('https://gregrasmussen.com/store-system/public-plu-data')
+  .then(response => response.json())
+  .then(data => {
+    pluData = data;
+  })
+  .catch(error => {
+    console.error('Error fetching PLU data from API:', error);
   });
 
-  clearButton.addEventListener("click", () => {
-    searchInput.value = "";
-    outputLabel.innerHTML = "";
-  });
+// Event Listeners
+searchInput.addEventListener('input', function() {
+  const searchTerm = searchInput.value.toLowerCase();
+  let foundItems = pluData.filter(item => 
+    item.Name.toLowerCase().includes(searchTerm) || 
+    item['PLU Code'].toString().includes(searchTerm)
+  );
+  
+  // Clear the output label
+  outputLabel.innerHTML = '';
 
-  exitButton.addEventListener("click", () => {
-    window.close();
+  // Show matched items
+  foundItems.forEach(item => {
+    outputLabel.innerHTML += `<a href="https://www.google.com/search?q=${item.Name}">${item.Name}</a> (PLU Code: ${item['PLU Code']})<br>`;
   });
+  
+  if (foundItems.length === 0) {
+    outputLabel.textContent = 'Not found';
+  }
+});
+
+clearButton.addEventListener('click', function() {
+  searchInput.value = '';
+  outputLabel.textContent = '';
+});
+
+exitButton.addEventListener('click', function() {
+  window.close();
 });
