@@ -1,49 +1,35 @@
-// Fetch PLU data from somewhere, dummy data for now
-let pluData = []; // This should be filled by your fetchPLU.js
+document.addEventListener("DOMContentLoaded", () => {
+  const searchInput = document.getElementById("searchInput");
+  const outputLabel = document.getElementById("outputLabel");
+  const clearButton = document.getElementById("clearButton");
+  const exitButton = document.getElementById("exitButton");
 
-// Get DOM elements
-const searchInput = document.getElementById('searchInput');
-const outputLabel = document.getElementById('outputLabel');
-const clearButton = document.getElementById('clearButton');
-const exitButton = document.getElementById('exitButton');
+  // Sample data, replace with your actual data
+  const pluData = [
+    { plu: "4011", name: "Banana" },
+    { plu: "4131", name: "Apple" },
+    // ... more data
+  ];
 
-// Event Listeners
-searchInput.addEventListener('input', function() {
-  const searchTerm = searchInput.value.toLowerCase();
-  let foundItems = pluData.filter(item => 
-    item.Name.toLowerCase().includes(searchTerm) || 
-    item['PLU Code'].toLowerCase().includes(searchTerm)
-  );
-  
-  // Sort the items alphabetically
-  foundItems.sort((a, b) => a.Name.localeCompare(b.Name));
-  
-  // Clear the output label
-  outputLabel.innerHTML = '';
+  searchInput.addEventListener("input", () => {
+    const query = searchInput.value.toLowerCase().trim();
+    const result = pluData.find(
+      (item) => item.plu === query || item.name.toLowerCase() === query
+    );
 
-  // Show the first 5 matched items as suggestions
-  for(let i = 0; i < Math.min(5, foundItems.length); i++) {
-    outputLabel.innerHTML += `<a href="https://www.google.com/search?q=${foundItems[i].Name}">${foundItems[i].Name}</a> (PLU Code: ${foundItems[i]['PLU Code']})<br>`;
-  }
-  
-  if (foundItems.length === 0) {
-    outputLabel.textContent = 'Not found';
-  }
+    if (result) {
+      outputLabel.innerHTML = `PLU Code: ${result.plu}, Name: ${result.name}`;
+    } else {
+      outputLabel.innerHTML = "No match found";
+    }
+  });
+
+  clearButton.addEventListener("click", () => {
+    searchInput.value = "";
+    outputLabel.innerHTML = "";
+  });
+
+  exitButton.addEventListener("click", () => {
+    window.close();
+  });
 });
-
-clearButton.addEventListener('click', function() {
-  searchInput.value = '';
-  outputLabel.textContent = '';
-});
-
-exitButton.addEventListener('click', function() {
-  window.close();
-});
-
-// Fetch data from plu_data.json and update pluData
-fetch('./plu_data.json')  
-  .then(response => response.json())
-  .then(data => {
-    pluData = data;
-  })
-  .catch(error => console.error('Error fetching PLU data:', error));
