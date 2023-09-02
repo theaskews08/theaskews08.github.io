@@ -1,21 +1,11 @@
-// Initialize empty array to hold PLU data
-let pluData = [];
+// Fetch PLU data from somewhere, dummy data for now
+let pluData = []; // This should be filled by your fetchPLU.js
 
 // Get DOM elements
 const searchInput = document.getElementById('searchInput');
 const outputLabel = document.getElementById('outputLabel');
 const clearButton = document.getElementById('clearButton');
 const exitButton = document.getElementById('exitButton');
-
-// Fetch PLU data from the API
-fetch('https://gregrasmussen.com/store-system/public-plu-data')
-  .then(response => response.json())
-  .then(data => {
-    pluData = data;
-  })
-  .catch(error => {
-    console.error('Error fetching PLU data from API:', error);
-  });
 
 // Event Listeners
 searchInput.addEventListener('input', function() {
@@ -25,13 +15,16 @@ searchInput.addEventListener('input', function() {
     item['PLU Code'].toString().includes(searchTerm)
   );
   
+  // Sort the items alphabetically
+  foundItems.sort((a, b) => a.Name.localeCompare(b.Name));
+  
   // Clear the output label
   outputLabel.innerHTML = '';
 
-  // Show matched items
-  foundItems.forEach(item => {
-    outputLabel.innerHTML += `<a href="https://www.google.com/search?q=${item.Name}">${item.Name}</a> (PLU Code: ${item['PLU Code']})<br>`;
-  });
+  // Show the first 5 matched items as suggestions
+  for(let i = 0; i < Math.min(5, foundItems.length); i++) {
+    outputLabel.innerHTML += `<a href="https://www.google.com/search?q=${foundItems[i].Name}">${foundItems[i].Name}</a> (PLU Code: ${foundItems[i]['PLU Code']})<br>`;
+  }
   
   if (foundItems.length === 0) {
     outputLabel.textContent = 'Not found';
@@ -46,3 +39,11 @@ clearButton.addEventListener('click', function() {
 exitButton.addEventListener('click', function() {
   window.close();
 });
+
+// Fetch data from plu_data.json and update pluData
+fetch('./plu_data.json')  
+  .then(response => response.json())
+  .then(data => {
+    pluData = data;
+  })
+  .catch(error => console.error('Error fetching PLU data:', error));
