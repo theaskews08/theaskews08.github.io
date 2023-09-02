@@ -2,22 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Optimize for mobile -->
   <title>PRODUCE PLU LOOKUP TOOL</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="fetchPLU.js" defer></script>
   <script src="main.js" defer></script>
 </head>
-<body style="background-color: black; color: white;">
+<body>
   <img src="logo.png" alt="Logo">
   <h1>PRODUCE PLU LOOKUP TOOL</h1>
   <div class="search-box">
-    <span class="icon">&#128269;</span> <!-- Magnifying glass icon -->
-    <input id="searchInput" type="text" placeholder="">
+    <input id="searchInput" type="text">
+    <span class="search-icon">&#128269;</span> <!-- Magnifying glass icon -->
   </div>
   <div id="outputLabel"></div>
   <button id="clearButton">Clear</button>
   <button id="exitButton">Exit</button>
   <p>Created by Brian Askew</p>
-  <ul id="pluList"></ul>
 </body>
 </html>
