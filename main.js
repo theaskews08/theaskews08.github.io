@@ -1,5 +1,5 @@
-// Fetch PLU data from somewhere, dummy data for now
-let pluData = []; // This should be filled by your fetchPLU.js
+// Initialize empty array for PLU data
+let pluData = [];
 
 // Get DOM elements
 const searchInput = document.getElementById('searchInput');
