@@ -1,21 +1,28 @@
-<!DOCTYPE html> 
- <html lang="en"> 
- <head> 
-   <meta charset="UTF-8"> 
-   <title>PRODUCE PLU LOOKUP TOOL</title> 
-   <link rel="stylesheet" href="styles.css"> 
-   <script src="fetchPLU.js" defer></script> 
-   <script src="main.js" defer></script> 
- </head> 
- <body style="background-color: black; color: white;"> 
-   <img src="logo.png" alt="Logo"> 
-   <h1>PRODUCE PLU LOOKUP TOOL</h1> 
-   <div class="search-box"> 
-     <span class="icon">&#128269;</span> <!-- Magnifying glass icon --> 
-     <input id="searchInput" type="text" placeholder="Search..."> 
-   </div> 
-   <div id="outputLabel"></div> 
-   <button id="clearButton">Clear</button> 
-   <button id="exitButton">Exit</button> 
-   <p>Created by Brian Askew</p> 
-   <ul id="pluList"></ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Podcast Website</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Welcome to Our Podcast!</h1>
+  </header>
+  <main>
+    <section id="latest-episode">
+      <h2>Latest Episode</h2>
+      <audio controls>
+        <source src="latest-episode.mp3" type="audio/mpeg">
+      </audio>
+    </section>
+    <section id="episode-list">
+      <h2>Past Episodes</h2>
+      <!-- List of past episodes will go here -->
+    </section>
+  </main>
+  <footer>
+    <p>Copyright 2023, All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
