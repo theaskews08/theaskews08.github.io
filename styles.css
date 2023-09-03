@@ -11,6 +11,18 @@
   font: inherit;
 }
 
+/* Language Selector */
+#languageSelect {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  background-color: white;
+  color: black;
+  border: 1px solid gray;
+  padding: 5px;
+}
+
 * {
   box-sizing: border-box;
   padding: 20px; /* Double the padding */
@@ -24,24 +36,6 @@ body {
   padding-top: 60px; /* Double the padding at the top */
   background-color: black;
   color: white;
-}
-
-.hidden {
-  display: none;
-}
-
-#menu {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: white;
-  color: black;
-  z-index: 1;
-}
-
-.filter {
-  display: block;
-  padding: 10px;
 }
 
 img {
@@ -102,4 +96,20 @@ a {
 
 a:hover {
   text-decoration: underline;  /* Adds underline when hovered */
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  input[type="text"],
+  button,
+  h1,
+  p {
+    font-size: 2em; /* Increase font size */
+  }
+  input[type="text"] {
+    width: 90%; /* Increase width */
+  }
+  button {
+    width: 80%; /* Increase width */
+  }
 }
