@@ -45,17 +45,17 @@ input[type="text"] {
   color: black; /* Make the font color black */
 }
 
-div#outputLabel {
+div outputLabel {
   font-size: 24px;
   margin-bottom: 20px;
-  color: red;
+  color: white;
 }
 
 button {
   font-size: 24px;
   padding: 10px 20px;
   margin: 10px;
-  background-color: #007bff;
+  background-color: #272b2e;
   color: white;
   border: none;
   border-radius: 12px; /* Rounded corners */
