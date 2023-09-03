@@ -28,7 +28,7 @@ body {
 .container {
   margin: 0 auto;
   text-align: center;
-  border: 2px solid gray; /* Border around the entire page */
+  border: 2px solid gray; /* Border around the container */
 }
 
 img {
@@ -48,6 +48,7 @@ h1 {
   position: relative;
   width: 80%;
   margin: auto;
+  border: 2px solid gray; /* Border around the search box */
 }
 
 .search-icon {
@@ -55,7 +56,7 @@ h1 {
   left: 10px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 20px;
+  font-size: 20px; /* Smaller, more basic style */
   background-color: transparent;
   color: black;
 }
@@ -74,6 +75,7 @@ div#outputLabel {
   font-size: 24px;
   margin-bottom: 40px;
   color: white;
+  border: 2px solid gray; /* Border around the output label */
 }
 
 button {
@@ -82,6 +84,7 @@ button {
   margin: 20px;
   background-color: #2e3236;
   color: white;
+  border: 2px solid gray; /* Border around the button */
   border-radius: 12px;
   box-shadow: inset 0 0 5px #000, 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.19);
   font-weight: bold;
