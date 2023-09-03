@@ -2,32 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PRODUCE PLU LOOKUP TOOL</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Optimize for mobile -->
+  <title>PLU LOOKUP TOOL</title>
   <link rel="stylesheet" href="styles.css">
   <script src="main.js" defer></script>
 </head>
 <body>
-  <div class="container">
-    <button id="menuButton">Menu</button>
-    <div id="menu" class="hidden">
-      <button class="filter" data-filter="A">A</button>
-      <button class="filter" data-filter="B">B</button>
-      <!-- Add more buttons here -->
-      <div id="categories">
-        <!-- Categories will be populated here -->
-      </div>
-    </div>
-    <img src="black_apple.png" alt="Logo">
-    <h1>PLU Lookup Tool</h1>
-    <div class="search-box">
-      <input id="searchInput" type="text">
-      <span class="search-icon">&#128269;</span>
-    </div>
-    <div id="outputLabel"></div>
-    <button id="clearButton">Clear</button>
-    <button id="exitButton">Exit</button>
-    <p>Created by Brian Askew</p>
+  <button id="menuButton">Menu</button>
+  <div id="menu" class="hidden">
+    <button class="filter" data-filter="A">A</button>
+    <!-- ... buttons for other letters ... -->
+    <button class="filter" data-filter="Z">Z</button>
   </div>
+  <img src="black apple.png" alt="Logo">
+  <h1>PLU LOOKUP TOOL</h1>
+  <div class="search-box">
+    <span class="search-icon">&#128269;</span> <!-- Magnifying glass icon -->
+    <input id="searchInput" type="text" placeholder="Search">
+  </div>
+  <div id="outputLabel"></div>
+  <button id="clearButton">Clear</button>
+  <button id="exitButton">Exit</button>
+  <p>Created by Brian Askew</p>
 </body>
 </html>
