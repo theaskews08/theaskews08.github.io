@@ -8,19 +8,14 @@
   <script src="main.js" defer></script>
 </head>
 <body>
-  <select id="languageSelect">
-    <option value="en">English</option>
-    <option value="es">Español</option>
-    <!-- Add more languages here -->
-  </select>
-  <button id="menuButton">Menu</button>
-  <div id="menu" class="hidden">
-    <button class="filter" data-filter="A">A</button>
-    <!-- ... buttons for other letters ... -->
-    <button class="filter" data-filter="Z">Z</button>
+  <div style="text-align: right;">
+    <select id="languageSelect">
+      <option value="en">English</option>
+      <option value="es">Español</option>
+    </select>
   </div>
   <img src="black apple.png" alt="Logo">
-  <h1>PLU LOOKUP TOOL</h1>
+  <h1 id="title">PLU LOOKUP TOOL</h1>
   <div class="search-box">
     <span class="search-icon">&#128269;</span> <!-- Magnifying glass icon -->
     <input id="searchInput" type="text" placeholder="Search">
@@ -28,6 +23,6 @@
   <div id="outputLabel"></div>
   <button id="clearButton">Clear</button>
   <button id="exitButton">Exit</button>
-  <p>Created by Brian Askew</p>
+  <p id="createdBy">Created by Brian Askew</p>
 </body>
 </html>
