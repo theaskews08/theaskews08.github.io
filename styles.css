@@ -45,7 +45,7 @@ input[type="text"] {
   color: black; /* Make the font color black */
 }
 
-div outputLabel {
+div.outputLabel {
   font-size: 24px;
   margin-bottom: 20px;
   color: white;
