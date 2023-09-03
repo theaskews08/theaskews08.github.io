@@ -6,6 +6,9 @@ const searchInput = document.getElementById('searchInput');
 const outputLabel = document.getElementById('outputLabel');
 const clearButton = document.getElementById('clearButton');
 const exitButton = document.getElementById('exitButton');
+const languageSelect = document.getElementById('languageSelect');
+const title = document.getElementById('title');
+const createdBy = document.getElementById('createdBy');
 
 // Event Listeners
 searchInput.addEventListener('input', function() {
@@ -47,3 +50,17 @@ fetch('./plu_data.json')
     pluData = data;
   })
   .catch(error => console.error('Error fetching PLU data:', error));
+
+// Language selection logic
+languageSelect.addEventListener('change', function() {
+  const selectedLanguage = languageSelect.value;
+  if (selectedLanguage === 'es') {
+    title.textContent = 'HERRAMIENTA DE BÚSQUEDA PLU';
+    createdBy.textContent = 'Creado por Brian Askew';
+    // Add more translations here
+  } else {
+    title.textContent = 'PLU LOOKUP TOOL';
+    createdBy.textContent = 'Created by Brian Askew';
+    // Reset to default English text
+  }
+});
