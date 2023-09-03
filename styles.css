@@ -1,22 +1,116 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PRODUCE PLU LOOKUP TOOL</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="main.js" defer></script>
-</head>
-<body>
-  <img src="black apple.png" alt="Logo">
-  <h1>PLU LOOKUP TOOL</h1>
-  <div class="search-box">
-    <input id="searchInput" type="text">
-    <span class="search-icon">&#128269;</span> <!-- Magnifying glass icon -->
-  </div>
-  <div id="outputLabel"></div>
-  <button id="clearButton">Clear</button>
-  <button id="exitButton">Exit</button>
-  <p>Created by Brian Askew</p>
-</body>
-</html>
+/* CSS Reset or Normalization */
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  appearance: button;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  appearance: button;
+  font: inherit;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 20px; /* Double the padding */
+}
+
+/* Custom Styles */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding-top: 60px; /* Double the padding at the top */
+  background-color: black;
+  color: white;
+}
+
+img {
+  margin-top: 60px; /* Double the margin */
+  width: 300px;
+  height: auto;
+  margin-bottom: 60px; /* Double the margin */
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 40px; /* Double the margin */
+}
+
+/* Search Box */
+.search-box {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+}
+
+input[type="text"] {
+  font-size: 24px;
+  padding: 20px; /* Double the padding */
+  width: 70%;
+  margin-bottom: 60px; /* Double the margin */
+  background-color: lightgray;
+  color: black; /* Make the font color black */
+}
+
+div.outputLabel {
+  font-size: 24px;
+  margin-bottom: 40px; /* Double the margin */
+  color: white;
+}
+
+button {
+  font-size: 24px;
+  padding: 20px 40px; /* Double the padding and make it wider by 50% */
+  margin: 20px; /* Double the margin */
+  background-color: #2e3236; /* Lighten the gray */
+  color: white;
+  border: white;
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.19); /* 3D effect */
+  font-weight: bold; /* Make the font bold */
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19); /* 3D hover effect */
+}
+
+p {
+  font-size: 18px;
+  margin-bottom: 40px; /* Double the margin */
+}
+
+/* Hyperlink colors */
+a {
+  color: limegreen;  /* Set the hyperlink color to lime green */
+  text-decoration: none;  /* Removes underline */
+}
+
+a:hover {
+  text-decoration: underline;  /* Adds underline when hovered */
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  input[type="text"],
+  button,
+  h1,
+  p {
+    font-size: 2em; /* Increase font size */
+  }
+  input[type="text"] {
+    width: 90%; /* Increase width */
+  }
+  button {
+    width: 80%; /* Increase width */
+  }
+}
