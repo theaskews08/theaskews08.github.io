@@ -1,66 +1,105 @@
-// Initialize empty array for PLU data
-let pluData = [];
+/* CSS Reset or Normalization */
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  appearance: button;
+}
 
-// Get DOM elements
-const searchInput = document.getElementById('searchInput');
-const outputLabel = document.getElementById('outputLabel');
-const clearButton = document.getElementById('clearButton');
-const exitButton = document.getElementById('exitButton');
+/* Custom Styles */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+}
 
-// Event Listeners
-searchInput.addEventListener('input', function() {
-  const searchTerm = searchInput.value.toLowerCase();
-  let foundItems = pluData.filter(item => 
-    item.Name.toLowerCase().includes(searchTerm) || 
-    item['PLU Code'].toString().includes(searchTerm)
-  );
-  
-  // Sort the items alphabetically
-  foundItems.sort((a, b) => a.Name.localeCompare(b.Name));
-  
-  // Clear the output label
-  outputLabel.innerHTML = '';
+.container {
+  border: 2px solid gray;
+  margin: auto;
+  width: 80%;
+}
 
-  // Show the first 5 matched items as suggestions
-  for(let i = 0; i < Math.min(5, foundItems.length); i++) {
-    outputLabel.innerHTML += `<a href="https://www.google.com/search?q=${foundItems[i].Name}">${foundItems[i].Name}</a> (PLU Code: ${foundItems[i]['PLU Code']})<br>`;
-  }
-  
-  if (foundItems.length === 0) {
-    outputLabel.textContent = 'Not found';
-  }
-});
+img {
+  margin-top: 30px;
+  width: 300px;
+  height: auto;
+  margin-bottom: 30px;
+}
 
-clearButton.addEventListener('click', function() {
-  searchInput.value = '';
-  outputLabel.textContent = '';
-});
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
 
-exitButton.addEventListener('click', function() {
-  window.close();
-});
+.search-box {
+  position: relative;
+}
 
-// Fetch data from plu_data.json and update pluData
-fetch('./plu_data.json')  
-  .then(response => response.json())
-  .then(data => {
-    pluData = data;
-  })
-  .catch(error => console.error('Error fetching PLU data:', error));
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  background-color: transparent;
+}
 
-// Menu Button Logic
-const menuButton = document.getElementById('menuButton');
-const menu = document.getElementById('menu');
+input[type="text"] {
+  font-size: 24px;
+  padding: 10px;
+  width: 70%;
+  margin-bottom: 30px;
+  background-color: lightgray;
+  color: black;
+  padding-left: 40px;
+}
 
-menuButton.addEventListener('click', function() {
-  menu.classList.toggle('hidden');
-});
+div.outputLabel {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: white;
+}
 
-// Add event listeners to filter buttons
-const filterButtons = document.querySelectorAll('.filter');
-filterButtons.forEach(button => {
-  button.addEventListener('click', function() {
-    const filter = this.getAttribute('data-filter');
-    // Implement your filtering logic here
-  });
-});
+button {
+  font-size: 24px;
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #272b2e;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.19);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+}
+
+/* Menu Styles */
+#menuButton {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+#menu {
+  position: absolute;
+  top: 50px;
+  left: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  z-index: 1;
+}
+
+.hidden {
+  display: none;
+}
+
+.filter {
+  display: block;
+  margin-bottom: 5px;
+}
