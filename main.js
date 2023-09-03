@@ -47,3 +47,20 @@ fetch('./plu_data.json')
     pluData = data;
   })
   .catch(error => console.error('Error fetching PLU data:', error));
+
+// Menu Button Logic
+const menuButton = document.getElementById('menuButton');
+const menu = document.getElementById('menu');
+
+menuButton.addEventListener('click', function() {
+  menu.classList.toggle('hidden');
+});
+
+// Add event listeners to filter buttons
+const filterButtons = document.querySelectorAll('.filter');
+filterButtons.forEach(button => {
+  button.addEventListener('click', function() {
+    const filter = this.getAttribute('data-filter');
+    // Implement your filtering logic here
+  });
+});
