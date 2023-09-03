@@ -1,70 +1,42 @@
-// Initialize empty array for PLU data
-let pluData = [];
+var width = 600;
+var height = 400;
+var samples = 200;
 
-// Get DOM elements
-const searchInput = document.getElementById('searchInput');
-const outputLabel = document.getElementById('outputLabel');
-const clearButton = document.getElementById('clearButton');
-const exitButton = document.getElementById('exitButton');
-const menu = document.getElementById('menu');
+var container = d3.select("body")
+  .append("div")
+  .classed("svg-container", true);
 
-// Event Listeners
-searchInput.addEventListener('input', function () {
-  const searchTerm = searchInput.value.toLowerCase();
-  let foundItems = pluData.filter(item =>
-    item.Name.toLowerCase().includes(searchTerm) ||
-    item['PLU Code'].toString().includes(searchTerm)
-  );
+var svg = container
+  .append("svg")
+  .attr("preserveAspectRatio", "xMinYMin meet")
+  .attr("viewBox", "0 0 " + width + " " + height)
+  .classed("svg-content-responsive", true);
 
-  // Sort the items alphabetically
-  foundItems.sort((a, b) => a.Name.localeCompare(b.Name));
+var sites = d3.range(samples)
+  .map(() => [Math.random() * width, Math.random() * height]);
 
-  // Clear the output label
-  outputLabel.innerHTML = '';
+var voronoi = d3.Delaunay.from(sites).voronoi([-1, -1, width + 1, height + 1]);
 
-  // Show the first 5 matched items as suggestions
-  for (let i = 0; i < Math.min(5, foundItems.length); i++) {
-    outputLabel.innerHTML += `<a href="https://www.google.com/search?q=${foundItems[i].Name}">${foundItems[i].Name}</a> (PLU Code: ${foundItems[i]['PLU Code']})<br>`;
-  }
+var polygons = svg.selectAll("path")
+  .data(voronoi.cellPolygons())
+  .enter().append("path")
+  .call(redraw);
 
-  if (foundItems.length === 0) {
-    outputLabel.textContent = 'Not found';
-  }
-});
+var text = svg.append("text")
+  .attr("x", width/2)
+  .attr("y", height/2)
+  .text("D3")
+  .style("text-anchor", "middle");
 
-clearButton.addEventListener('click', function () {
-  searchInput.value = '';
-  outputLabel.textContent = '';
-});
+function redraw (polygon) {
+  polygon
+    .attr("d", d => "M" + d.join("L") + "Z")
+    .style("fill", d => color(d))
+    .style("stroke", d => color(d));
+}
 
-exitButton.addEventListener('click', function () {
-  window.close();
-});
-
-// Fetch data from plu_data.json and update pluData
-fetch('./plu_data.json')
-  .then(response => response.json())
-  .then(data => {
-    pluData = data;
-
-    // Generate menu items
-    let menuHTML = '';
-    for (let i = 65; i <= 90; i++) { // ASCII values for A-Z
-      const letter = String.fromCharCode(i);
-      menuHTML += `<div class="filter" data-filter="${letter}">${letter}</div>`;
-      const items = pluData.filter(item => item.Name.startsWith(letter));
-      items.forEach(item => {
-        menuHTML += `<div class="item">${item.Name} (PLU Code: ${item['PLU Code']})</div>`;
-      });
-    }
-    menu.innerHTML = menuHTML;
-  })
-  .catch(error => console.error('Error fetching PLU data:', error));
-
-// Add event listeners to filter buttons
-document.addEventListener('click', function (e) {
-  if (e.target.classList.contains('filter')) {
-    const filter = e.target.getAttribute('data-filter');
-    // Implement your filtering logic here
-  }
-});
+function color (d) {
+  var dx = d[0][0] - width / 2,
+    dy = d[1][0] - height / 2;
+  return d3.lab(100 - (dx * dx + dy * dy) / 5000, dx / 10, dy / 10);
+}
