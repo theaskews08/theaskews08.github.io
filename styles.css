@@ -1,116 +1,66 @@
-/* CSS Reset or Normalization */
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button;
-  appearance: button;
-}
+// Initialize empty array for PLU data
+let pluData = [];
 
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  appearance: button;
-  font: inherit;
-}
+// Get DOM elements
+const searchInput = document.getElementById('searchInput');
+const outputLabel = document.getElementById('outputLabel');
+const clearButton = document.getElementById('clearButton');
+const exitButton = document.getElementById('exitButton');
 
-* {
-  box-sizing: border-box;
-}
+// Event Listeners
+searchInput.addEventListener('input', function() {
+  const searchTerm = searchInput.value.toLowerCase();
+  let foundItems = pluData.filter(item => 
+    item.Name.toLowerCase().includes(searchTerm) || 
+    item['PLU Code'].toString().includes(searchTerm)
+  );
+  
+  // Sort the items alphabetically
+  foundItems.sort((a, b) => a.Name.localeCompare(b.Name));
+  
+  // Clear the output label
+  outputLabel.innerHTML = '';
 
-/* Custom Styles */
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  margin: 0;
-  padding-top: 60px;
-  background-color: black;
-  color: white;
-}
+  // Show the first 5 matched items as suggestions
+  for(let i = 0; i < Math.min(5, foundItems.length); i++) {
+    outputLabel.innerHTML += `<a href="https://www.google.com/search?q=${foundItems[i].Name}">${foundItems[i].Name}</a> (PLU Code: ${foundItems[i]['PLU Code']})<br>`;
+  }
+  
+  if (foundItems.length === 0) {
+    outputLabel.textContent = 'Not found';
+  }
+});
 
-.container {
-  margin: 0 auto;
-  text-align: center;
-  border: 2px solid gray; /* Border around the container */
-}
+clearButton.addEventListener('click', function() {
+  searchInput.value = '';
+  outputLabel.textContent = '';
+});
 
-img {
-  margin-top: 60px;
-  width: 300px;
-  height: auto;
-  margin-bottom: 60px;
-}
+exitButton.addEventListener('click', function() {
+  window.close();
+});
 
-h1 {
-  font-size: 36px;
-  margin-bottom: 40px;
-}
+// Fetch data from plu_data.json and update pluData
+fetch('./plu_data.json')  
+  .then(response => response.json())
+  .then(data => {
+    pluData = data;
+  })
+  .catch(error => console.error('Error fetching PLU data:', error));
 
-/* Search Box */
-.search-box {
-  position: relative;
-  width: 80%;
-  margin: auto;
-  border: 2px solid gray; /* Border around the search box */
-}
+// Menu Button Logic
+const menuButton = document.getElementById('menuButton');
+const menu = document.getElementById('menu');
 
-.search-icon {
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 20px; /* Smaller, more basic style */
-  background-color: transparent;
-  color: black;
-}
+menuButton.addEventListener('click', function() {
+  menu.classList.toggle('hidden');
+});
 
-input[type="text"] {
-  font-size: 24px;
-  padding: 20px;
-  width: 100%;
-  margin-bottom: 60px;
-  background-color: lightgray;
-  color: black;
-  padding-left: 40px; /* Make room for the magnifying glass */
-}
-
-div#outputLabel {
-  font-size: 24px;
-  margin-bottom: 40px;
-  color: white;
-  border: 2px solid gray; /* Border around the output label */
-}
-
-button {
-  font-size: 24px;
-  padding: 20px 40px;
-  margin: 20px;
-  background-color: #2e3236;
-  color: white;
-  border: 2px solid gray; /* Border around the button */
-  border-radius: 12px;
-  box-shadow: inset 0 0 5px #000, 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.19);
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
-
-button:active {
-  box-shadow: inset 0 0 10px #000, 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.19);
-}
-
-button:hover {
-  background-color: #0056b3;
-  box-shadow: inset 0 0 5px #000, 0 8px 16px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
-}
-
-p {
-  font-size: 18px;
-  margin-bottom: 40px;
-}
-
-/* Hyperlink colors */
-a {
-  color: limegreen;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
+// Add event listeners to filter buttons
+const filterButtons = document.querySelectorAll('.filter');
+filterButtons.forEach(button => {
+  button.addEventListener('click', function() {
+    const filter = this.getAttribute('data-filter');
+    // Implement your filtering logic here
+  });
+});
