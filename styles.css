@@ -1,29 +1,107 @@
+/* CSS Reset or Normalization */
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  appearance: button;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  appearance: button;
+  font: inherit;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 20px; /* Double the padding */
+}
+
 /* Custom Styles */
-.search-container {
-  position: relative;
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding-top: 60px; /* Double the padding at the top */
+  background-color: black;
+  color: white;
+}
+
+img {
+  margin-top: 60px; /* Double the margin */
   width: 300px;
+  height: auto;
+  margin-bottom: 60px; /* Double the margin */
 }
 
-.search-icon {
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
+h1 {
+  font-size: 36px;
+  margin-bottom: 40px; /* Double the margin */
+}
+
+input[type="text"] {
   font-size: 24px;
-  color: #aaa;
+  padding: 20px; /* Double the padding */
+  width: 70%;
+  margin-bottom: 60px; /* Double the margin */
+  background-color: lightgray;
+  background-image: url('magnifying-glass-icon.png');
+  background-position: 10px center;
+  background-repeat: no-repeat;
+  padding-left: 50px; /* Make room for the magnifying glass */
+  color: black; /* Make the font color black */
 }
 
-.search-input {
-  width: 100%;
-  padding: 12px 12px 12px 40px; /* Left padding is larger to make room for the icon */
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+div.outputLabel {
+  font-size: 24px;
+  margin-bottom: 40px; /* Double the margin */
+  color: white;
+}
+
+button {
+  font-size: 24px;
+  padding: 20px 40px; /* Double the padding and make it wider by 50% */
+  margin: 20px; /* Double the margin */
+  background-color: #2e3236; /* Lighten the gray */
+  color: white;
+  border: white;
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.19); /* 3D effect */
+  font-weight: bold; /* Make the font bold */
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19); /* 3D hover effect */
+}
+
+p {
+  font-size: 18px;
+  margin-bottom: 40px; /* Double the margin */
+}
+
+/* Hyperlink colors */
+a {
+  color: limegreen;  /* Set the hyperlink color to lime green */
+  text-decoration: none;  /* Removes underline */
+}
+
+a:hover {
+  text-decoration: underline;  /* Adds underline when hovered */
 }
 
 /* Media Query for Mobile Devices */
 @media (max-width: 768px) {
-  .search-container {
-    width: 90%;
+  input[type="text"],
+  button,
+  h1,
+  p {
+    font-size: 2em; /* Increase font size */
+  }
+  input[type="text"] {
+    width: 90%; /* Increase width */
+  }
+  button {
+    width: 80%; /* Increase width */
   }
 }
