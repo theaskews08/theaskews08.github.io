@@ -2,14 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Search Bar</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Optimize for mobile -->
+  <title>PRODUCE PLU LOOKUP TOOL</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="main.js" defer></script>
 </head>
 <body>
-  <div class="search-container">
-    <i class="material-icons search-icon">search</i>
-    <input class="search-input" type="text" placeholder="Search" aria-label="Search">
+  <img src="black apple.png" alt="Logo"> <!-- Changed to "black apple.png" -->
+  <h1>PLU LOOKUP TOOL</h1> <!-- Changed to "PLU LOOKUP TOOL" -->
+  <div class="search-box">
+    <input id="searchInput" type="text" placeholder=" ">
+    <span class="search-icon">&#128269;</span> <!-- Magnifying glass icon -->
   </div>
+  <div id="outputLabel"></div>
+  <button id="clearButton">Clear</button>
+  <button id="exitButton">Exit</button>
+  <p>Created by Brian Askew</p>
 </body>
 </html>
