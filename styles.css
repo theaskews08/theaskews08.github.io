@@ -60,7 +60,7 @@ button {
   background-color: #2e3236; /* Lighten the gray */
   color: white;
   border: white;
-  border-radius: 12px; /* Rounded corners */
+  border-radius: 18px; /* Rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.19); /* 3D effect */
   font-weight: bold; /* Make the font bold */
   transition: all 0.3s ease;
