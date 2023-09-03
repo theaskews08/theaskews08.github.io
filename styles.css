@@ -26,9 +26,9 @@ body {
 }
 
 img {
-  width: 400px;
+  width: 300px;
   height: auto;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 h1 {
@@ -39,8 +39,8 @@ h1 {
 input[type="text"] {
   font-size: 24px;
   padding: 10px;
-  width: 60%;
-  margin-bottom: 20px;
+  width: 70%;
+  margin-bottom: 30px;
   background-color: lightgray;
   color: black; /* Make the font color black */
 }
@@ -57,7 +57,7 @@ button {
   margin: 10px;
   background-color: #272b2e;
   color: white;
-  border: none;
+  border: white;
   border-radius: 12px; /* Rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.19); /* 3D effect */
   transition: all 0.3s ease;
