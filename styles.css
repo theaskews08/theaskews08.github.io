@@ -38,26 +38,30 @@ h1 {
   margin-bottom: 40px; /* Double the margin */
 }
 
-/* Search Box */
-.search-box {
+/* Additional CSS for the search bar */
+.md-form.mt-0 {
+  display: inline-flex;
+  align-items: center;
+  width: 70%;
+  background-color: lightgray;
   position: relative;
 }
 
-.search-icon {
+.material-icons.mdc-button__icon {
   position: absolute;
   left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
   font-size: 24px;
+  color: black;
 }
 
-input[type="text"] {
+.form-control {
+  flex-grow: 1;
   font-size: 24px;
-  padding: 20px; /* Double the padding */
-  width: 70%;
-  margin-bottom: 60px; /* Double the margin */
-  background-color: lightgray;
-  color: black; /* Make the font color black */
+  padding: 20px;
+  padding-left: 50px; /* Make room for the magnifying glass */
+  background: none;
+  border: none;
+  color: black;
 }
 
 div.outputLabel {
