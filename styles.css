@@ -13,7 +13,6 @@
 
 * {
   box-sizing: border-box;
-  padding: 20px; /* Double the padding */
 }
 
 /* Custom Styles */
@@ -21,100 +20,83 @@ body {
   font-family: Arial, sans-serif;
   text-align: center;
   margin: 0;
-  padding-top: 60px; /* Double the padding at the top */
+  padding-top: 60px;
   background-color: black;
   color: white;
 }
 
 img {
-  margin-top: 60px; /* Double the margin */
+  margin-top: 60px;
   width: 300px;
   height: auto;
-  margin-bottom: 60px; /* Double the margin */
+  margin-bottom: 60px;
 }
 
 h1 {
   font-size: 36px;
-  margin-bottom: 40px; /* Double the margin */
+  margin-bottom: 40px;
 }
 
-/* Additional CSS for the search bar */
-.md-form.mt-0 {
-  display: inline-flex;
-  align-items: center;
-  width: 70%;
-  background-color: lightgray;
+/* Search Box */
+.search-box {
   position: relative;
+  width: 80%;
+  margin: auto;
 }
 
-.material-icons.mdc-button__icon {
+.search-icon {
   position: absolute;
   left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
   font-size: 24px;
-  color: black;
 }
 
-.form-control {
-  flex-grow: 1;
+input[type="text"] {
   font-size: 24px;
   padding: 20px;
-  padding-left: 50px; /* Make room for the magnifying glass */
-  background: none;
-  border: none;
+  width: 100%;
+  margin-bottom: 60px;
+  background-color: lightgray;
   color: black;
+  padding-left: 40px; /* Make room for the magnifying glass */
 }
 
-div.outputLabel {
+div#outputLabel {
   font-size: 24px;
-  margin-bottom: 40px; /* Double the margin */
+  margin-bottom: 40px;
   color: white;
 }
 
 button {
   font-size: 24px;
-  padding: 20px 40px; /* Double the padding and make it wider by 50% */
-  margin: 20px; /* Double the margin */
-  background-color: #2e3236; /* Lighten the gray */
+  padding: 20px 40px;
+  margin: 20px;
+  background-color: #2e3236;
   color: white;
   border: white;
-  border-radius: 12px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.19); /* 3D effect */
-  font-weight: bold; /* Make the font bold */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.19);
+  font-weight: bold;
   transition: all 0.3s ease;
 }
 
 button:hover {
   background-color: #0056b3;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19); /* 3D hover effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
 }
 
 p {
   font-size: 18px;
-  margin-bottom: 40px; /* Double the margin */
+  margin-bottom: 40px;
 }
 
 /* Hyperlink colors */
 a {
-  color: limegreen;  /* Set the hyperlink color to lime green */
-  text-decoration: none;  /* Removes underline */
+  color: limegreen;
+  text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline;  /* Adds underline when hovered */
-}
-
-/* Media Query for Mobile Devices */
-@media (max-width: 768px) {
-  input[type="text"],
-  button,
-  h1,
-  p {
-    font-size: 2em; /* Increase font size */
-  }
-  input[type="text"] {
-    width: 90%; /* Increase width */
-  }
-  button {
-    width: 80%; /* Increase width */
-  }
+  text-decoration: underline;
 }
