@@ -38,19 +38,18 @@ img {
   margin-top: 30px; /* Double the margin */
   height: auto;
   margin-bottom: 60px; /* Double the margin */
-  img {
- max-width: 100%;
+  max-width: 100%;
   }
 
 h1 {
-  font-size: 36px;
-  margin-bottom: 30px; /* Double the margin */
+  font-size: 28px;
+  margin-bottom: 40px; /* Double the margin */
 }
 
 input[type="text"] {
   font-size: 24px;
   padding: 20px; /* Double the padding */
-  width: 70%;
+  width: 90%;
   margin-bottom: 30px; /* Double the margin */
   background-color: lightgray;
   color: black; /* Make the font color black */
