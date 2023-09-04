@@ -39,7 +39,9 @@ img {
   width: 300px;
   height: auto;
   margin-bottom: 60px; /* Double the margin */
-}
+  img {
+ max-width: 100%;
+  }
 
 h1 {
   font-size: 36px;
