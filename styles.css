@@ -83,7 +83,7 @@ button:hover {
 
 p {
   font-size: 18px;
-  margin-bottom: 40px; /* Double the margin */
+  margin-bottom: 80px; /* Double the margin */
 }
 
 /* Hyperlink colors */
@@ -105,9 +105,9 @@ a:hover {
     font-size: 2em; /* Increase font size */
   }
   input[type="text"] {
-    width: 90%; /* Increase width */
+    width: 100%; /* Increase width */
   }
   button {
-    width: 80%; /* Increase width */
+    width: 100%; /* Increase width */
   }
 }
