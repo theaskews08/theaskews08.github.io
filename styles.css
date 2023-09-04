@@ -50,20 +50,20 @@ input[type="text"] {
   font-size: 24px;
   padding: 10px; /* Double the padding */
   width: 100%;
-  margin-bottom: 30px; /* Double the margin */
+  margin-bottom: 20px; /* Double the margin */
   background-color: lightgray;
   color: black; /* Make the font color black */
 }
 
 div.outputLabel {
   font-size: 24px;
-  margin-bottom: 40px; /* Double the margin */
+  margin-bottom: 30px; /* Double the margin */
   color: white;
 }
 
 button {
   font-size: 24px;
-  padding: 20px 40px; /* Double the padding and make it wider by 50% */
+  padding: 20px 20px; /* Double the padding and make it wider by 50% */
   margin: 20px; /* Double the margin */
   background-color: #2e3236; /* Lighten the gray */
   color: white;
@@ -81,7 +81,7 @@ button:hover {
 
 p {
   font-size: 18px;
-  margin-bottom: 80px; /* Double the margin */
+  margin-bottom: 40px; /* Double the margin */
 }
 
 /* Hyperlink colors */
