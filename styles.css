@@ -13,7 +13,7 @@
 
 * {
   box-sizing: border-box;
-  padding: 10px;
+  padding: 5px;
 }
 
 /* Custom Styles */
@@ -21,7 +21,7 @@ body {
   font-family: Arial, sans-serif;
   text-align: center;
   margin: 0;
-  padding-top: 15px;
+  padding-top: 10px;
   background-color: black;
   color: white;
   background: linear-gradient(to bottom, #000000 0%, #434343 100%);
@@ -35,15 +35,15 @@ body {
 }
 
 img {
-  margin-top: 30px;
+  margin-top: 15px;
   height: auto;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
   max-width: 100%;
 }
 
 h1 {
-  font-size: 28px;
-  margin-bottom: 20px;
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
 /* Media Query for Mobile Devices */
@@ -56,7 +56,7 @@ h1 {
   button,
   h1,
   p {
-    font-size: 2em;
+    font-size: 1.5em;
   }
   input[type="text"] {
     width: 100%;
