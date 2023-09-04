@@ -13,7 +13,7 @@
 
 * {
   box-sizing: border-box;
-  padding: 10px; /* Double the padding */
+  padding: 10px;
 }
 
 /* Custom Styles */
@@ -21,52 +21,54 @@ body {
   font-family: Arial, sans-serif;
   text-align: center;
   margin: 0;
-  padding-top: 15px; /* Double the padding at the top */
+  padding-top: 15px;
   background-color: black;
   color: white;
-  background: linear-gradient(to bottom, #000000 0%, #434343 100%); /* Background Gradient */
+  background: linear-gradient(to bottom, #000000 0%, #434343 100%);
 }
 
-/* Container for border */
 .container {
   border: 6px solid gray;
   margin: auto;
   width: 100%;
+  text-align: center;
 }
 
 img {
-  margin-top: 30px; /* Double the margin */
+  margin-top: 30px;
   height: auto;
-  margin-bottom: 60px; /* Double the margin */
+  margin-bottom: 60px;
   max-width: 100%;
 }
 
 h1 {
   font-size: 28px;
-  margin-bottom: 20px; /* Double the margin */
+  margin-bottom: 20px;
 }
 
 /* Media Query for Mobile Devices */
 @media (max-width: 768px) {
   .container {
     width: 100%;
+    margin: 0 auto;
   }
   input[type="text"],
   button,
   h1,
   p {
-    font-size: 2em; /* Increase font size */
+    font-size: 2em;
   }
   input[type="text"] {
-    width: 100%; /* Increase width */
+    width: 100%;
   }
   button {
-    width: 100%; /* Increase width */
+    width: 100%;
   }
   img {
-    padding: 0; /* Remove padding */
+    padding: 0;
+    margin: 0 auto;
   }
   div.outputLabel {
-    padding: 0; /* Remove padding */
+    padding: 0;
   }
 }
