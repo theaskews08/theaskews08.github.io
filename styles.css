@@ -1,87 +1,56 @@
-/* CSS Reset or Normalization */
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button;
-  appearance: button;
-}
+/* Base Styles */
 
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  appearance: button;
-  font: inherit;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 5px;
-}
-
-/* Custom Styles */
 body {
   font-family: Arial, sans-serif;
-  text-align: center;
   margin: 0;
-  padding-top: 10px;
+  padding: 0;
   background-color: black;
   color: white;
   background: linear-gradient(to bottom, #000000 0%, #434343 100%);
-}
-
-.container {
-  border: 6px solid gray;
-  margin: auto;
-  width: 100%;
   text-align: center;
 }
 
 img {
-  margin-top: 15px;
+  max-width: 100%;
   height: auto;
-  margin-bottom: 30px;
-  max-width: 75%;
 }
 
-h1 {
-  font-size: 24px;
-  margin-bottom: 10px;
+/* Search Box and Buttons */
+
+.search-box,
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+  width: 80%;
 }
 
-/* Rounded corners for search box and buttons */
-#searchInput,
+#searchInput {
+  flex: 1;
+  border-radius: 12px;
+}
+
 #clearButton,
 #exitButton {
-  border-radius: 12px;  /* You can adjust the radius as needed */
+  flex: 0;
+  margin: 5px;
+  border-radius: 12px;
 }
 
-/* Add padding between buttons */
-#clearButton,
-#exitButton {
-  margin: 5px;  /* Add 5px margin to separate the buttons */
-}
+/* Media Queries */
 
-/* Media Query for Mobile Devices */
 @media (max-width: 768px) {
-  .container {
-    width: 100%;
-    margin: 0 auto;
-  }
-  input[type="text"],
-  button,
-  h1,
-  p {
+  #searchInput,
+  #clearButton,
+  #exitButton {
     font-size: 1.5em;
   }
-  input[type="text"] {
-    width: 100%;
-  }
-  button {
-    width: 100%;
-  }
-  img {
-    padding: 0;
-    margin: 0 auto;
-  }
-  div.outputLabel {
-    padding: 0;
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  #searchInput,
+  #clearButton,
+  #exitButton {
+    font-size: 1.2em;
   }
 }
