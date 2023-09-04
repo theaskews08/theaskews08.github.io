@@ -31,7 +31,7 @@ body {
 .container {
   border: 6px solid gray;
   margin: auto;
-  width: 80%;
+  width: 100%;
 }
 
 img {
@@ -43,13 +43,13 @@ img {
 
 h1 {
   font-size: 28px;
-  margin-bottom: 40px; /* Double the margin */
+  margin-bottom: 20px; /* Double the margin */
 }
 
 input[type="text"] {
   font-size: 24px;
-  padding: 20px; /* Double the padding */
-  width: 90%;
+  padding: 10px; /* Double the padding */
+  width: 100%;
   margin-bottom: 30px; /* Double the margin */
   background-color: lightgray;
   color: black; /* Make the font color black */
