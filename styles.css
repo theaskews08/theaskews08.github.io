@@ -21,7 +21,7 @@ body {
   font-family: Arial, sans-serif;
   text-align: center;
   margin: 0;
-  padding-top: 60px; /* Double the padding at the top */
+  padding-top: 30px; /* Double the padding at the top */
   background-color: black;
   color: white;
   background: linear-gradient(to bottom, #000000 0%, #434343 100%); /* Background Gradient */
@@ -35,7 +35,7 @@ body {
 }
 
 img {
-  margin-top: 60px; /* Double the margin */
+  margin-top: 30px; /* Double the margin */
   width: 300px;
   height: auto;
   margin-bottom: 60px; /* Double the margin */
@@ -45,14 +45,14 @@ img {
 
 h1 {
   font-size: 36px;
-  margin-bottom: 40px; /* Double the margin */
+  margin-bottom: 30px; /* Double the margin */
 }
 
 input[type="text"] {
   font-size: 24px;
   padding: 20px; /* Double the padding */
   width: 70%;
-  margin-bottom: 60px; /* Double the margin */
+  margin-bottom: 30px; /* Double the margin */
   background-color: lightgray;
   color: black; /* Make the font color black */
 }
