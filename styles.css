@@ -38,12 +38,25 @@ img {
   margin-top: 15px;
   height: auto;
   margin-bottom: 30px;
-  max-width: 75%;  /* Reduced the image size by 25% */
+  max-width: 75%;
 }
 
 h1 {
   font-size: 24px;
   margin-bottom: 10px;
+}
+
+/* Rounded corners for search box and buttons */
+#searchInput,
+#clearButton,
+#exitButton {
+  border-radius: 12px;  /* You can adjust the radius as needed */
+}
+
+/* Add padding between buttons */
+#clearButton,
+#exitButton {
+  margin: 5px;  /* Add 5px margin to separate the buttons */
 }
 
 /* Media Query for Mobile Devices */
