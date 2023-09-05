@@ -68,3 +68,4 @@ languageSelect.addEventListener('change', function() {
     // Reset to default English text
   }
 });
+theaskews08.github.io/main.js at eb655807dd8005e5b491c2f17d3a6a89107bee92 · theaskews08/theaskews08.github.io
