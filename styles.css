@@ -56,9 +56,20 @@ h1 {
 /* Add padding between buttons */ 
 #clearButton, 
 #exitButton { 
-  margin: 5px auto;  /* Center the buttons */ 
-  display: block;  /* Make them block elements */
+  margin: 5px;  /* Add 5px margin to separate the buttons */ 
 } 
+
+/* Hyperlink colors */
+a {
+  color: teal;  /* Set the hyperlink color to teal */
+  text-decoration: none;  /* Removes underline */
+  font-weight: bold;  /* Makes the text bold for sharpness */
+}
+
+a:hover {
+  text-decoration: underline;  /* Adds underline when hovered */
+  color: aqua;  /* Changes color to aqua when hovered */
+}
 
 /* Media Query for Mobile Devices */ 
 @media (max-width: 768px) { 
