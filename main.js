@@ -6,9 +6,6 @@ const searchInput = document.getElementById('searchInput');
 const outputLabel = document.getElementById('outputLabel');
 const clearButton = document.getElementById('clearButton');
 const exitButton = document.getElementById('exitButton');
-const languageSelect = document.getElementById('languageSelect');
-const title = document.getElementById('title');
-const createdBy = document.getElementById('createdBy');
 
 // Event Listeners
 searchInput.addEventListener('input', function() {
@@ -23,10 +20,6 @@ searchInput.addEventListener('input', function() {
   
   // Clear the output label
   outputLabel.innerHTML = '';
-
-  searchInput.addEventListener('focus', function() {
-  searchInput.scrollIntoView({behavior: "smooth"});
-});
 
   // Show the first 5 matched items as suggestions
   for(let i = 0; i < Math.min(5, foundItems.length); i++) {
@@ -54,18 +47,3 @@ fetch('./plu_data.json')
     pluData = data;
   })
   .catch(error => console.error('Error fetching PLU data:', error));
-
-// Language selection logic
-languageSelect.addEventListener('change', function() {
-  const selectedLanguage = languageSelect.value;
-  if (selectedLanguage === 'es') {
-    title.textContent = 'HERRAMIENTA DE BÚSQUEDA PLU';
-    createdBy.textContent = 'Creado por Brian Askew';
-    // Add more translations here
-  } else {
-    title.textContent = 'PLU LOOKUP TOOL';
-    createdBy.textContent = 'Created by Brian Askew';
-    // Reset to default English text
-  }
-});
-theaskews08.github.io/main.js at eb655807dd8005e5b491c2f17d3a6a89107bee92 · theaskews08/theaskews08.github.io
