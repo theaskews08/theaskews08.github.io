@@ -64,11 +64,7 @@ a {
   color: teal;  /* Set the hyperlink color to teal */
   text-decoration: none;  /* Removes underline */
   font-weight: bold;  /* Makes the text bold for sharpness */
-}
-
-a:hover {
-  text-decoration: underline;  /* Adds underline when hovered */
-  color: aqua;  /* Changes color to aqua when hovered */
+  font-size: calc(1em + 2pt);  /* Increase font size by 2 points */
 }
 
 /* Media Query for Mobile Devices */ 
