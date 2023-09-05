@@ -1,112 +1,56 @@
-/* CSS Reset or Normalization */
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button;
-  appearance: button;
-}
+/* Base Styles */
 
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  appearance: button;
-  font: inherit;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 10px;
-}
-
-/* Custom Styles */
 body {
   font-family: Arial, sans-serif;
-  text-align: center;
   margin: 0;
-  padding-top: 15px;
+  padding: 0;
   background-color: black;
   color: white;
   background: linear-gradient(to bottom, #000000 0%, #434343 100%);
-}
-
-/* Container for border */
-.container {
-  border: 6px solid #7D8B99;  /* Added a softer gray color */
-  margin: auto;
-  width: 100%;
+  text-align: center;
 }
 
 img {
-  margin-top: 30px;
+  max-width: 100%;
   height: auto;
-  margin-bottom: 60px;
-  max-width: 75%;  /* Reduced the image size by 25% */
 }
 
-h1 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  color: #F4D03F;  /* Added a gold color for a touch of elegance */
+/* Search Box and Buttons */
+
+.search-box,
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+  width: 80%;
 }
 
-input[type="text"] {
-  font-size: 24px;
-  padding: 20px;
-  width: 100%;
-  margin-bottom: 60px;
-  background-color: #F2F3F4;  /* Light gray */
-  color: #17202A;  /* Dark gray */
-}
-
-div.outputLabel {
-  font-size: 24px;
-  margin-bottom: 40px;
-  color: #F4D03F;  /* Gold color to match the header */
-}
-
-button {
-  font-size: 24px;
-  padding: 20px 40px;
-  margin: 20px;
-  background-color: #7D8B99;  /* Soft gray */
-  color: white;
-  border: 2px solid white;  /* White border added */
+#searchInput {
+  flex: 1;
   border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.19);
-  font-weight: bold;
-  transition: all 0.3s ease;
 }
 
-button:hover {
-  background-color: #F4D03F;  /* Gold color for hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+#clearButton,
+#exitButton {
+  flex: 0;
+  margin: 5px;
+  border-radius: 12px;
 }
 
-p {
-  font-size: 18px;
-  margin-bottom: 40px;
-  color: #7D8B99;  /* Soft gray to match the buttons */
-}
+/* Media Queries */
 
-/* Media Query for Mobile Devices */
 @media (max-width: 768px) {
-  .container {
-    width: 100%;
+  #searchInput,
+  #clearButton,
+  #exitButton {
+    font-size: 1.5em;
   }
-  input[type="text"],
-  button,
-  h1,
-  p {
-    font-size: 2em;
-  }
-  input[type="text"] {
-    width: 100%;
-  }
-  button {
-    width: 100%;
-  }
-  img {
-    padding: 0;
-  }
-  div.outputLabel {
-    padding: 0;
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  #searchInput,
+  #clearButton,
+  #exitButton {
+    font-size: 1.2em;
   }
 }
