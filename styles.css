@@ -20,21 +20,20 @@ img {
 .search-box,
 .button-container {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   margin: 20px auto;
-  width: 80%;
 }
 
-#searchInput {
-  flex: 1;
-  border-radius: 12px;
-}
-
+#searchInput,
 #clearButton,
 #exitButton {
-  flex: 0;
-  margin: 5px;
+  width: 80%;
   border-radius: 12px;
+  margin: 5px;
+  font-size: 1.2em;
+  box-shadow: 0px 4px 6px #888888;
 }
 
 /* Media Queries */
@@ -44,13 +43,5 @@ img {
   #clearButton,
   #exitButton {
     font-size: 1.5em;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1200px) {
-  #searchInput,
-  #clearButton,
-  #exitButton {
-    font-size: 1.2em;
   }
 }
