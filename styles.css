@@ -1,5 +1,4 @@
 /* Base Styles */
-
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -28,18 +27,24 @@ img {
 #searchInput {
   flex: 1;
   border-radius: 12px;
+  margin: 0 auto;
 }
 
 #clearButton,
 #exitButton {
-  flex: 0;
-  margin: 5px;
+  border: 3px solid white; /* Thicker border */
   border-radius: 12px;
+  background: linear-gradient(to top, #444, #888); /* 3D effect */
+  margin: 5px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds shadow for more depth */
 }
 
 /* Media Queries */
-
 @media (max-width: 768px) {
+  .search-box,
+  .button-container {
+    width: 100%;
+  }
   #searchInput,
   #clearButton,
   #exitButton {
