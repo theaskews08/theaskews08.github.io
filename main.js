@@ -24,6 +24,10 @@ searchInput.addEventListener('input', function() {
   // Clear the output label
   outputLabel.innerHTML = '';
 
+  searchInput.addEventListener('focus', function() {
+  searchInput.scrollIntoView({behavior: "smooth"});
+});
+
   // Show the first 5 matched items as suggestions
   for(let i = 0; i < Math.min(5, foundItems.length); i++) {
     outputLabel.innerHTML += `<a href="https://www.google.com/search?q=${foundItems[i].Name}">${foundItems[i].Name}</a> (PLU Code: ${foundItems[i]['PLU Code']})<br>`;
