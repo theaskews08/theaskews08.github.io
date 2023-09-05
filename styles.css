@@ -46,20 +46,17 @@ h1 {
   margin-bottom: 10px;
 }
 
-/* Rounded corners for search box and buttons */
 #searchInput,
 #clearButton,
 #exitButton {
-  border-radius: 12px;  /* You can adjust the radius as needed */
+  border-radius: 12px;
 }
 
-/* Add padding between buttons */
 #clearButton,
 #exitButton {
-  margin: 5px;  /* Add 5px margin to separate the buttons */
+  margin: 5px;
 }
 
-/* Media Query for Mobile Devices */
 @media (max-width: 768px) {
   .container {
     width: 100%;
@@ -85,4 +82,3 @@ h1 {
     padding: 0;
   }
 }
-
