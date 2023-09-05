@@ -1,84 +1,88 @@
-/* CSS Reset or Normalization */
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button;
-  appearance: button;
-}
+/* CSS Reset or Normalization */ 
+[type="reset"], 
+[type="submit"] { 
+  -webkit-appearance: button; 
+  appearance: button; 
+} 
 
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  appearance: button;
-  font: inherit;
-}
+::-webkit-file-upload-button { 
+  -webkit-appearance: button; 
+  appearance: button; 
+  font: inherit; 
+} 
 
-* {
-  box-sizing: border-box;
-  padding: 5px;
-}
+* { 
+  box-sizing: border-box; 
+  padding: 5px; 
+} 
 
-/* Custom Styles */
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  margin: 0;
-  padding-top: 10px;
-  background-color: black;
-  color: white;
-  background: linear-gradient(to bottom, #000000 0%, #434343 100%);
-}
+/* Custom Styles */ 
+body { 
+  font-family: Arial, sans-serif; 
+  text-align: center; 
+  margin: 0; 
+  padding-top: 10px; 
+  background-color: black; 
+  color: white; 
+  background: linear-gradient(to bottom, #000000 0%, #434343 100%); 
+} 
 
-.container {
-  border: 6px solid gray;
-  margin: auto;
-  width: 100%;
-  text-align: center;
-}
+.container { 
+  border: 6px solid gray; 
+  margin: auto; 
+  width: 100%; 
+  text-align: center; 
+} 
 
-img {
-  margin-top: 15px;
-  height: auto;
-  margin-bottom: 30px;
-  max-width: 75%;
-}
+img { 
+  margin-top: 15px; 
+  height: auto; 
+  margin-bottom: 30px; 
+  max-width: 75%; 
+} 
 
-h1 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
+h1 { 
+  font-size: 24px; 
+  margin-bottom: 10px; 
+} 
 
-#searchInput,
-#clearButton,
-#exitButton {
-  border-radius: 12px;
-}
+/* Rounded corners for search box and buttons */ 
+#searchInput, 
+#clearButton, 
+#exitButton { 
+  border-radius: 12px;  /* You can adjust the radius as needed */ 
+} 
 
-#clearButton,
-#exitButton {
-  margin: 5px;
-}
+/* Add padding between buttons */ 
+#clearButton, 
+#exitButton { 
+  margin: 5px auto;  /* Center the buttons */ 
+  display: block;  /* Make them block elements */
+} 
 
-@media (max-width: 768px) {
-  .container {
-    width: 100%;
-    margin: 0 auto;
-  }
-  input[type="text"],
-  button,
-  h1,
-  p {
-    font-size: 1.5em;
-  }
-  input[type="text"] {
-    width: 100%;
-  }
-  button {
-    width: 100%;
-  }
-  img {
-    padding: 0;
-    margin: 0 auto;
-  }
-  div.outputLabel {
-    padding: 0;
-  }
+/* Media Query for Mobile Devices */ 
+@media (max-width: 768px) { 
+  .container { 
+    width: 100%; 
+    margin: 0 auto; 
+  } 
+  input[type="text"], 
+  button, 
+  h1, 
+  p { 
+    font-size: 1.5em; 
+  } 
+  input[type="text"] { 
+    width: 100%; 
+  } 
+  button { 
+    width: 100%; 
+  } 
+  img { 
+    padding: 0; 
+    margin: 0 auto; 
+  } 
+  div.outputLabel { 
+    padding: 0; 
+  } 
 }
