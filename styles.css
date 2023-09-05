@@ -1,47 +1,100 @@
-/* Base Styles */
+/* CSS Reset or Normalization */
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  appearance: button;
+}
 
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  appearance: button;
+  font: inherit;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+/* Custom Styles */
 body {
   font-family: Arial, sans-serif;
+  text-align: center;
   margin: 0;
-  padding: 0;
+  padding-top: 10px;
   background-color: black;
   color: white;
   background: linear-gradient(to bottom, #000000 0%, #434343 100%);
+}
+
+.container {
+  border: 6px solid gray;
+  margin: auto;
+  width: 100%;
   text-align: center;
 }
 
 img {
-  max-width: 100%;
+  margin-top: 15px;
   height: auto;
+  margin-bottom: 30px;
+  max-width: 75%;
 }
 
-/* Search Box and Buttons */
-
-.search-box,
-.button-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 20px auto;
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
+/* Rounded corners for search box and buttons */
 #searchInput,
 #clearButton,
 #exitButton {
-  width: 80%;
-  border-radius: 12px;
-  margin: 5px;
-  font-size: 1.2em;
-  box-shadow: 0px 4px 6px #888888;
+  border-radius: 12px;  /* You can adjust the radius as needed */
 }
 
-/* Media Queries */
+/* Add padding between buttons */
+#clearButton,
+#exitButton {
+  margin: 5px;  /* Add 5px margin to separate the buttons */
+}
 
+/* Media Query for Mobile Devices */
 @media (max-width: 768px) {
-  #searchInput,
-  #clearButton,
-  #exitButton {
+  .container {
+    width: 100%;
+    margin: 0 auto;
+  }
+  input[type="text"],
+  button,
+  h1,
+  p {
     font-size: 1.5em;
   }
+  input[type="text"] {
+    width: 100%;
+  }
+  button {
+    width: 100%;
+  }
+  img {
+    padding: 0;
+    margin: 0 auto;
+  }
+  div.outputLabel {
+    padding: 0;
+  }
 }
+‎margin‎
+9 ReferencesSearch
+‎In this file‎
+  margin: 0;
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  margin-bottom: 10px;
+  margin: 5px;  /* Add 5px margin to separate the buttons */
+  margin: 5px;  /* Add 5px margin to separate the buttons */
+    margin: 0 auto;
+    margin: 0 auto;
+theaskews08.github.io/styles.css at 94b56e50e1c979d5cde673f8046be5ea09b8b663 · theaskews08/theaskews08.github.io
