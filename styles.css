@@ -13,7 +13,7 @@
 
 * {
   box-sizing: border-box;
-  padding: 5px;
+  padding: 10px;
 }
 
 /* Custom Styles */
@@ -35,28 +35,21 @@ body {
 }
 
 img {
-  margin-top: 5px;
+  margin-top: 15px;
   height: auto;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   max-width: 75%;
 }
 
 h1 {
-  font-size: 20px;
+  font-size: 24px;
   margin-bottom: 10px;
 }
 
-/* Rounded corners for search box and buttons */
-#searchInput,
-#clearButton,
-#exitButton {
-  border-radius: 18px;
-}
-
-/* Add padding between buttons */
-#clearButton,
-#exitButton {
-  margin: 5px;
+/* Center the buttons */
+#clearButton, #exitButton {
+  display: inline-block;
+  margin: 0 auto;
 }
 
 /* Hyperlink colors */
@@ -64,6 +57,11 @@ a {
   color: teal;
   text-decoration: none;
   font-size: 18px;
+}
+
+p {
+  font-size: 16px;
+  margin-bottom: 10px;
 }
 
 /* Media Query for Mobile Devices */
@@ -91,23 +89,4 @@ a {
   div.outputLabel {
     padding: 0;
   }
-}
-
-/* Custom class for the "Created by Brian Askew" text */
-.created-by {
-  font-size: 16px;
-  margin-bottom: 0;
-}
-
-/* Custom class for the author name */
-.author-name {
-  font-size: 16px;
-  font-weight: bold;
-}
-
-/* Custom class for the credit section */
-.credit-section {
-  border-top: 1px solid white;
-  padding-top: 10px;
-  text-align: center;
 }
