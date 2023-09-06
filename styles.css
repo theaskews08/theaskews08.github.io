@@ -1,56 +1,54 @@
+/* CSS Reset or Normalization */
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  appearance: button;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 1em;
+}
+
 /* Custom Styles */
 body {
   font-family: Arial, sans-serif;
   text-align: center;
   margin: 0;
-  padding-top: 10px;
+  padding-top: 1em;
   background-color: black;
   color: white;
   background: linear-gradient(to bottom, #000000 0%, #434343 100%);
 }
 
 .container {
-  border: 6px solid gray;
+  border: 0.5em solid gray;
   margin: auto;
   width: 100%;
   text-align: center;
 }
 
-img {
-  margin-top: 15px;
-  height: auto;
-  margin-bottom: 30px;
-  max-width: 75%;
+.text {
+  font-size: 2em;
+  font-weight: 700;
+  color: #f5f5f5;
+  text-shadow: 0px 0px 0.2em #919191;
 }
 
-h1 {
-  font-size: 24px;
-  margin-bottom: 10px;
+button {
+  margin: 0.5em auto;
+  display: block;
 }
 
-#searchInput,
-#clearButton,
-#exitButton,
-#saveButton,
-#exportButton {
-  border-radius: 12px;
-  margin: 5px;
+a {
+  color: teal;
+  font-size: 1.2em;
 }
 
-#savedSearches {
-  margin-top: 20px;
-  border: 1px solid teal;
-  padding: 10px;
-  max-height: 200px;
-  overflow-y: auto;
+.credit {
+  font-size: 1em;
 }
 
-p {
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-
-/* Media Query for Mobile Devices */
 @media (max-width: 768px) {
   .container {
     width: 100%;
@@ -67,12 +65,5 @@ p {
   }
   button {
     width: 100%;
-  }
-  img {
-    padding: 0;
-    margin: 0 auto;
-  }
-  div.outputLabel {
-    padding: 0;
   }
 }
