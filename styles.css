@@ -35,14 +35,14 @@ body {
 }
 
 img {
-  margin-top: 15px;
+  margin-top: 5px;
   height: auto;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   max-width: 75%;
 }
 
 h1 {
-  font-size: 24px;
+  font-size: 20px;
   margin-bottom: 10px;
 }
 
@@ -50,7 +50,7 @@ h1 {
 #searchInput,
 #clearButton,
 #exitButton {
-  border-radius: 12px;
+  border-radius: 18px;
 }
 
 /* Add padding between buttons */
