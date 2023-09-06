@@ -13,7 +13,7 @@
 
 * {
   box-sizing: border-box;
-  padding: 5px;
+  padding: 10px;
 }
 
 /* Custom Styles */
@@ -21,7 +21,7 @@ body {
   font-family: Arial, sans-serif;
   text-align: center;
   margin: 0;
-  padding-top: 10px;
+  padding-top: 15px;
   background-color: black;
   color: white;
   background: linear-gradient(to bottom, #000000 0%, #434343 100%);
@@ -36,14 +36,14 @@ body {
 
 img {
   margin-top: 15px;
-  height: auto;
+  height: 75%;
   margin-bottom: 30px;
   max-width: 75%;
 }
 
 h1 {
-  font-size: 24px;
-  margin-bottom: 10px;
+  font-size: 22px;
+  margin-bottom: 15px;
 }
 
 /* 3D Title */
