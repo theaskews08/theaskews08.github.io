@@ -54,13 +54,17 @@ exitButton.addEventListener('click', function() {
 saveButton.addEventListener('click', function() {
   const currentSearch = searchInput.value;
   if (currentSearch) {
-    savedSearches.push(currentSearch);
+    const foundItems = pluData.filter(item => 
+      item.Name.toLowerCase().includes(currentSearch.toLowerCase()) || 
+      item['PLU Code'].toString().includes(currentSearch)
+    );
+    savedSearches.push(...foundItems);
     updateSavedSearches();
   }
 });
 
 exportButton.addEventListener('click', function() {
-  const blob = new Blob([savedSearches.join('\n')], { type: 'text/plain' });
+  const blob = new Blob([savedSearches.map(item => `${item.Name}, ${item['PLU Code']}`).join('\n')], { type: 'text/plain' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
@@ -79,7 +83,7 @@ fetch('./plu_data.json')
 
 function updateSavedSearches() {
   savedSearchesDiv.innerHTML = '';
-  savedSearches.forEach(search => {
-    savedSearchesDiv.innerHTML += `<p>${search}</p>`;
+  savedSearches.forEach(item => {
+    savedSearchesDiv.innerHTML += `<p>${item.Name} (PLU Code: ${item['PLU Code']})</p>`;
   });
 }
