@@ -1,21 +1,3 @@
-/* CSS Reset or Normalization */
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button;
-  appearance: button;
-}
-
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  appearance: button;
-  font: inherit;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 10px;
-}
-
 /* Custom Styles */
 body {
   font-family: Arial, sans-serif;
@@ -46,17 +28,21 @@ h1 {
   margin-bottom: 10px;
 }
 
-/* Center the buttons */
-#clearButton, #exitButton {
-  display: inline-block;
-  margin: 0 auto;
+#searchInput,
+#clearButton,
+#exitButton,
+#saveButton,
+#exportButton {
+  border-radius: 12px;
+  margin: 5px;
 }
 
-/* Hyperlink colors */
-a {
-  color: teal;
-  text-decoration: none;
-  font-size: 18px;
+#savedSearches {
+  margin-top: 20px;
+  border: 1px solid teal;
+  padding: 10px;
+  max-height: 200px;
+  overflow-y: auto;
 }
 
 p {
