@@ -5,9 +5,15 @@
   appearance: button;
 }
 
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  appearance: button;
+  font: inherit;
+}
+
 * {
   box-sizing: border-box;
-  padding: 1em;
+  padding: 10px;
 }
 
 /* Custom Styles */
@@ -15,40 +21,50 @@ body {
   font-family: Arial, sans-serif;
   text-align: center;
   margin: 0;
-  padding-top: 1em;
+  padding-top: 10px;
   background-color: black;
   color: white;
   background: linear-gradient(to bottom, #000000 0%, #434343 100%);
 }
 
 .container {
-  border: 0.5em solid gray;
+  border: 6px solid gray;
   margin: auto;
   width: 100%;
   text-align: center;
 }
 
-.text {
-  font-size: 2em;
-  font-weight: 700;
-  color: #f5f5f5;
-  text-shadow: 0px 0px 0.2em #919191;
+img {
+  margin-top: 15px;
+  height: auto;
+  margin-bottom: 30px;
+  max-width: 75%;
 }
 
-button {
-  margin: 0.5em auto;
-  display: block;
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
+/* Center the buttons */
+#clearButton, #exitButton {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+/* Hyperlink colors */
 a {
   color: teal;
-  font-size: 1.2em;
+  text-decoration: none;
+  font-size: 18px;
 }
 
-.credit {
-  font-size: 1em;
+p {
+  font-size: 16px;
+  margin-bottom: 10px;
 }
 
+/* Media Query for Mobile Devices */
 @media (max-width: 768px) {
   .container {
     width: 100%;
@@ -65,5 +81,12 @@ a {
   }
   button {
     width: 100%;
+  }
+  img {
+    padding: 0;
+    margin: 0 auto;
+  }
+  div.outputLabel {
+    padding: 0;
   }
 }
