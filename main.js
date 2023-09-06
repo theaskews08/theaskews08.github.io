@@ -7,11 +7,6 @@ const outputLabel = document.getElementById('outputLabel');
 const clearButton = document.getElementById('clearButton');
 const exitButton = document.getElementById('exitButton');
 
-// Function to close the keyboard on mobile devices
-function closeKeyboard(element) {
-  element.blur();
-}
-
 // Event Listeners
 searchInput.addEventListener('input', function() {
   const searchTerm = searchInput.value.toLowerCase();
@@ -33,12 +28,6 @@ searchInput.addEventListener('input', function() {
   
   if (foundItems.length === 0) {
     outputLabel.textContent = 'Not found';
-  }
-});
-
-searchInput.addEventListener('keydown', function(event) {
-  if (event.key === 'Enter') {
-    closeKeyboard(searchInput);
   }
 });
 
