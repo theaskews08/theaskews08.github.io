@@ -51,12 +51,8 @@ h1 {
 #clearButton, 
 #exitButton { 
   border-radius: 12px;  /* You can adjust the radius as needed */ 
-} 
-
-/* Add padding between buttons */ 
-#clearButton, 
-#exitButton { 
-  margin: 5px;  /* Add 5px margin to separate the buttons */ 
+  margin: 5px auto;  /* Center the buttons */
+  display: block;  /* Block level elements for centering */
 } 
 
 /* Hyperlink colors */
