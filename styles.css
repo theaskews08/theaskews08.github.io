@@ -1,55 +1,87 @@
+/* CSS Reset or Normalization */
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  appearance: button;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  appearance: button;
+  font: inherit;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 5px;
+}
+
 /* Custom Styles */
 body {
   font-family: Arial, sans-serif;
   text-align: center;
   margin: 0;
-  padding: 0;
+  padding-top: 10px;
   background-color: black;
   color: white;
+  background: linear-gradient(to bottom, #000000 0%, #434343 100%);
 }
 
 .container {
-  border: 2px solid royalblue;
+  border: 6px solid gray;
   margin: auto;
   width: 100%;
   text-align: center;
 }
 
-.text {
-  font-size: 36px;
-  font-family: 'Verdana', sans-serif;
-  text-shadow: 2px 2px 4px #000000;
+img {
+  margin-top: 15px;
+  height: auto;
+  margin-bottom: 30px;
+  max-width: 75%;
 }
 
-.search-box input[type="text"],
-button {
-  margin: 0 auto;
-  display: block;
-}
-
-button {
+h1 {
   font-size: 24px;
-  padding: 20px 40px;
-  background-color: #2e3236;
-  color: white;
-  border: 2px solid royalblue;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.19);
-  transition: all 0.3s ease;
+  margin-bottom: 10px;
 }
 
-button:hover {
-  background-color: #0056b3;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+/* Rounded corners for search box and buttons */
+#searchInput,
+#clearButton,
+#exitButton {
+  border-radius: 12px;  /* You can adjust the radius as needed */
 }
 
-.credit {
-  font-size: 16px;
+/* Add padding between buttons */
+#clearButton,
+#exitButton {
+  margin: 5px;  /* Add 5px margin to separate the buttons */
 }
 
-/* Hyperlink colors */
-a {
-  color: teal;
-  text-decoration: none;
-  font-size: 18px;
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    margin: 0 auto;
+  }
+  input[type="text"],
+  button,
+  h1,
+  p {
+    font-size: 1.5em;
+  }
+  input[type="text"] {
+    width: 100%;
+  }
+  button {
+    width: 100%;
+  }
+  img {
+    padding: 0;
+    margin: 0 auto;
+  }
+  div.outputLabel {
+    padding: 0;
+  }
 }
