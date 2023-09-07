@@ -24,8 +24,6 @@ body {
   padding-top: 10px;
   background-color: black;
   color: white;
-  background: linear-gradient(to bottom, #000000 0%, #434343 100%);
-}
 
 .container {
   border: 6px solid gray;
@@ -37,8 +35,8 @@ body {
 img {
   margin-top: 15px;
   height: auto;
-  margin-bottom: 10px;
-  max-width: 100%;
+  margin-bottom: 30px;
+  max-width: 75%;
 }
 
 h1 {
@@ -49,10 +47,10 @@ h1 {
 /* 3D Title */
 .text {
   font-family: verdana;
-  font-size: 24px; /* Adjusted from 12em to fit better */
+  font-size: 24px;
   font-weight: 700;
   color: #f5f5f5;
-  text-shadow: 1px 1px 1px #919191, 1px 2px 1px #919191, /* ... other shadows ... */ 1px 30px 60px rgba(16,16,16,0.4);
+  text-shadow: 1px 1px 1px #919191, 1px 2px 1px #919191, 1px 30px 60px rgba(16,16,16,0.4);
 }
 
 /* Centered buttons */
@@ -60,13 +58,21 @@ h1 {
 #exitButton {
   margin: 5px auto;
   display: block;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.19);
+  transition: all 0.3s ease;
+}
+
+#clearButton:hover,
+#exitButton:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
 }
 
 /* Hyperlink colors */
 a {
   color: teal;
   text-decoration: none;
-  font-size: 16px; /* Increased by 2 points */
+  font-size: 16px;
 }
 
 /* Media Query for Mobile Devices */
