@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PLU Lookup Tool</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
   <script src="main.js" defer></script>
 </head>
@@ -11,10 +12,10 @@
   <div class="container">
     <img src="logobw.png" alt="Logo">
     <h1><span class="text">PLU Lookup Tool</span></h1>
-    <div class="search-box">
-      <input id="searchInput" type="text" placeholder="Search">
-      <span class="search-icon">&#128269;</span>
-    </div>
+    <form action="#">
+      <input id="searchInput" type="search" placeholder="Search">
+      <i class="fa fa-search"></i>
+    </form>
     <div id="outputLabel"></div>
     <button id="clearButton">Clear</button>
     <button id="exitButton">Exit</button>
