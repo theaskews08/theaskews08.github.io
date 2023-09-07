@@ -13,7 +13,7 @@
 
 * {
   box-sizing: border-box;
-  padding: 10px;
+  padding: 5px;
 }
 
 /* Custom Styles */
@@ -21,7 +21,8 @@ body {
   font-family: Arial, sans-serif;
   text-align: center;
   margin: 0;
-  padding-top: 10px;
+  padding: 0;
+  height: 100vh; /* Fill the whole screen */
   background-color: black;
   color: white;
   background: linear-gradient(to bottom, #000000 0%, #434343 100%);
@@ -30,8 +31,10 @@ body {
 .container {
   border: 6px solid gray;
   margin: auto;
+  height: 100vh; /* Fill the whole screen */
   width: 100%;
   text-align: center;
+  overflow: hidden; /* No scrolling */
 }
 
 img {
@@ -46,22 +49,30 @@ h1 {
   margin-bottom: 10px;
 }
 
-/* Center the buttons */
-#clearButton, #exitButton {
-  display: inline-block;
-  margin: 0 auto;
+/* Rounded corners for search box and buttons */
+#searchInput,
+#clearButton,
+#exitButton {
+  border-radius: 12px;
+}
+
+/* Add padding between buttons */
+#clearButton,
+#exitButton {
+  margin: 5px;
 }
 
 /* Hyperlink colors */
 a {
-  color: teal;
+  color: teal; /* Teal color for better readability */
+  font-size: 18px; /* Increase font size by 2 points */
   text-decoration: none;
-  font-size: 18px;
 }
 
+/* Credit */
 p {
-  font-size: 16px;
-  margin-bottom: 10px;
+  font-size: 16px; /* Reduced font size for the credit */
+  margin-top: auto;
 }
 
 /* Media Query for Mobile Devices */
