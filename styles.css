@@ -11,7 +11,6 @@
   font: inherit;
 }
 
-/* General Resets */
 * {
   box-sizing: border-box;
   padding: 0;
@@ -65,6 +64,7 @@ form {
   border-radius: 25px;
   padding: 5px;
   border: 4px solid white;
+  transition: width 1s ease;
 }
 
 input[type="search"] {
@@ -77,6 +77,11 @@ input[type="search"] {
   background: none;
   color: #000;
   font-size: 18px;
+  transition: width 1s ease;
+}
+
+input[type="search"]:focus {
+  width: 200px;
 }
 
 i.fa-search {
@@ -88,6 +93,11 @@ i.fa-search {
   color: #000;
 }
 
+form:focus-within {
+  width: 250px;
+}
+
+/* Existing Button Styles */
 #clearButton,
 #exitButton {
   margin: 20px auto;
@@ -118,4 +128,25 @@ a {
 
 a:hover {
   color: #018a99;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 15px;
+  }
+  h1,
+  p,
+  input[type="text"],
+  button {
+    font-size: 1.5em;
+  }
+  input[type="text"],
+  button {
+    width: 100%;
+  }
+  img {
+    max-width: 100%;
+  }
 }
