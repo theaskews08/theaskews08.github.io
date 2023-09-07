@@ -54,80 +54,51 @@ h1 {
   text-shadow: 2px 2px 4px #333;
 }
 
-/* Search Bar */
+input[type="search"]::placeholder {
+  color: white;
+}
+
+/* Animated Search Bar */
 form {
   position: relative;
-  display: inline-block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  transition: all 1s;
   width: 50px;
   height: 50px;
   background: white;
+  box-sizing: border-box;
   border-radius: 25px;
-  padding: 5px;
   border: 4px solid white;
-  transition: width 1s ease;
+  padding: 5px;
 }
 
-input[type="search"] {
+input {
   position: absolute;
+  top: 0;
+  left: 0;
+  background: none;
+  border: none;
+  outline: none;
   width: 100%;
   height: 100%;
-  border: none;
-  padding: 0;
-  outline: none;
-  background: none;
-  color: #000;
   font-size: 18px;
-  transition: width 1s ease;
+  color: #333;
 }
 
-input[type="search"]:focus {
-  width: 200px;
-}
-
-i.fa-search {
+i {
   position: absolute;
-  right: 5px;
   top: 50%;
+  right: 10%;
   transform: translateY(-50%);
-  font-size: 20px;
-  color: #000;
-}
-
-form:focus-within {
-  width: 250px;
-}
-
-/* Existing Button Styles */
-#clearButton,
-#exitButton {
-  margin: 20px auto;
-  display: block;
-  width: 80%;
-  padding: 15px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 25px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-#clearButton:hover,
-#exitButton:hover {
-  background-color: #45a049;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-  transform: translateY(-3px);
-}
-
-a {
-  color: #00bcd4;
-  text-decoration: none;
+  color: #333;
   font-size: 18px;
-  transition: color 0.3s ease;
 }
 
-a:hover {
-  color: #018a99;
+form:hover {
+  width: 200px;
+  cursor: pointer;
 }
 
 /* Media Query for Mobile Devices */
@@ -136,14 +107,10 @@ a:hover {
     width: 100%;
     padding: 15px;
   }
-  h1,
-  p,
-  input[type="text"],
-  button {
+  h1, p, input[type="text"], button {
     font-size: 1.5em;
   }
-  input[type="text"],
-  button {
+  input[type="text"], button {
     width: 100%;
   }
   img {
