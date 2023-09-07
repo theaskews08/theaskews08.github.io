@@ -20,7 +20,7 @@
 /* Custom Styles */
 body {
   font-family: 'Helvetica', sans-serif;
-  background-color: #1a1a1a;
+  background-color: #000000;  /* Solid black background */
   color: #f1f1f1;
   margin: 0;
   padding: 20px;
@@ -58,7 +58,7 @@ input[type="text"] {
   width: 80%;
   padding: 15px;
   border: none;
-  border-radius: 25px;  /* Rounded corners for search bar */
+  border-radius: 25px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
