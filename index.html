@@ -21,4 +21,16 @@
     <p>Created by Brian Askew</p>
   </div>
 </body>
-</html>
+window.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.querySelector('.search');
+
+  searchInput.addEventListener('focus', function() {
+    document.body.style.position = 'fixed';
+    document.body.style.bottom = '50px';  // Move the body up by 50px
+  });
+
+  searchInput.addEventListener('blur', function() {
+    document.body.style.position = '';
+    document.body.style.bottom = '';  // Reset the position
+  });
+});
