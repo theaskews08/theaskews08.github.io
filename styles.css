@@ -56,15 +56,15 @@ h1 {
 
 /* Updated Search bar */
 #searchInput {
-  padding: 15px;
   width: 80%;
+  padding: 12px;
   border: none;
   border-radius: 25px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Font size for 'Created by Brian Askew' */
-p.createdBy {
+p {
   font-size: 16px;
 }
 
@@ -106,10 +106,10 @@ a:hover {
     width: 100%;
     padding: 15px;
   }
-  h1, p, input[type="text"], button {
+  h1, p, #searchInput, button {
     font-size: 1.5em;
   }
-  input[type="text"], button {
+  #searchInput, button {
     width: 100%;
   }
   img {
