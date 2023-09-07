@@ -5,32 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PLU Lookup Tool</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="main.js" defer></script>
 </head>
 <body>
   <div class="container">
     <img src="logobw.png" alt="Logo">
     <h1><span class="text">PLU Lookup Tool</span></h1>
     <div class="search-box">
-      <input class="search-input" id="searchInput" type="text" placeholder="Search">
-      <div class="search-icon">&#128269;</div>
+      <span class="search-icon">&#128269;</span>
+      <input id="searchInput" class="search" type="text" placeholder="Search">
     </div>
     <div id="outputLabel"></div>
     <button id="clearButton">Clear</button>
     <button id="exitButton">Exit</button>
-    <p>Created by Brian Askew</p>
+    <p class="createdBy">Created by Brian Askew</p>
   </div>
   <script>
-    window.addEventListener('DOMContentLoaded', function() {
-      const searchInput = document.querySelector('#searchInput');
-      searchInput.addEventListener('focus', function() {
-        document.body.style.position = 'fixed';
-        document.body.style.bottom = '50px';
-      });
-      searchInput.addEventListener('blur', function() {
-        document.body.style.position = '';
-        document.body.style.bottom = '';
-      });
-    });
+    // Your JavaScript code here
   </script>
 </body>
 </html>
