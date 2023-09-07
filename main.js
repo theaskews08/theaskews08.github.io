@@ -1,27 +1,56 @@
-// main.js
-document.addEventListener("DOMContentLoaded", function() {
-  const searchInput = document.getElementById('searchInput');
-  const outputLabel = document.getElementById('outputLabel');
-  const clearButton = document.getElementById('clearButton');
-  const exitButton = document.getElementById('exitButton');
+// Initialize empty array for PLU data
+let pluData = [];
 
-  // Your existing code for the PLU Lookup Tool can go here.
+// Get DOM elements
+const searchInput = document.querySelector('input[type="search"]');
+const outputLabel = document.getElementById('outputLabel');
+const clearButton = document.getElementById('clearButton');
+const exitButton = document.getElementById('exitButton');
 
-  // This part adjusts the page when the keyboard appears
-  searchInput.addEventListener("focus", function() {
-    setTimeout(() => {
-      window.scrollTo(0, searchInput.offsetTop);
-    }, 300);
-  });
+// Event Listeners
+searchInput.addEventListener('input', function() {
+  const searchTerm = searchInput.value.toLowerCase();
+  let foundItems = pluData.filter(item =>  
+    item.Name.toLowerCase().includes(searchTerm) ||  
+    item['PLU Code'].toString().includes(searchTerm)
+  );
 
-  // Clear button event
-  clearButton.addEventListener('click', function() {
-    searchInput.value = '';
-    outputLabel.textContent = '';
-  });
+  // Sort the items alphabetically
+  foundItems.sort((a, b) => a.Name.localeCompare(b.Name));
 
-  // Exit button event
-  exitButton.addEventListener('click', function() {
-    window.close();
-  });
+  // Clear the output label
+  outputLabel.innerHTML = '';
+
+  // Show the first 5 matched items as suggestions
+  for(let i = 0; i < Math.min(5, foundItems.length); i++) {
+    outputLabel.innerHTML += `<a href="https://www.google.com/search?q=${foundItems[i].Name}">${foundItems[i].Name}</a> (PLU Code: ${foundItems[i]['PLU Code']})<br>`;
+  }
+
+  if (foundItems.length === 0) {
+    outputLabel.textContent = 'Not found';
+  }
 });
+
+// Close keyboard on "Enter" key press
+searchInput.addEventListener('keyup', function(event) {
+  if (event.keyCode === 13) {
+    searchInput.blur();
+  }
+});
+
+clearButton.addEventListener('click', function() {
+  searchInput.value = '';
+  outputLabel.textContent = '';
+});
+
+exitButton.addEventListener('click', function() {
+  window.close();
+});
+
+// Fetch data from plu_data.json and update pluData
+fetch('./plu_data.json')  
+  .then(response => response.json())
+  .then(data => {
+    pluData = data;
+  })
+  .catch(error => console.error('Error fetching PLU data:', error));
