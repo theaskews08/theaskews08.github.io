@@ -1,11 +1,15 @@
-// Initialize empty array for PLU data
+// Initialize empty array for PLU data and saved searches
 let pluData = [];
+let savedSearches = [];
 
 // Get DOM elements
 const searchInput = document.getElementById('searchInput');
 const outputLabel = document.getElementById('outputLabel');
 const clearButton = document.getElementById('clearButton');
 const exitButton = document.getElementById('exitButton');
+const saveButton = document.getElementById('saveButton');
+const exportButton = document.getElementById('exportButton');
+const savedSearchesDiv = document.getElementById('savedSearches');
 
 // Event Listeners
 searchInput.addEventListener('input', function() {
@@ -31,6 +35,13 @@ searchInput.addEventListener('input', function() {
   }
 });
 
+searchInput.addEventListener('keydown', function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    searchInput.blur();
+  }
+});
+
 clearButton.addEventListener('click', function() {
   searchInput.value = '';
   outputLabel.textContent = '';
@@ -40,6 +51,24 @@ exitButton.addEventListener('click', function() {
   window.close();
 });
 
+saveButton.addEventListener('click', function() {
+  const currentSearch = searchInput.value;
+  if (currentSearch) {
+    savedSearches.push(currentSearch);
+    updateSavedSearches();
+  }
+});
+
+exportButton.addEventListener('click', function() {
+  const blob = new Blob([savedSearches.join('\n')], { type: 'text/plain' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'saved_searches.txt';
+  a.click();
+  URL.revokeObjectURL(url);
+});
+
 // Fetch data from plu_data.json and update pluData
 fetch('./plu_data.json')  
   .then(response => response.json())
@@ -47,3 +76,10 @@ fetch('./plu_data.json')
     pluData = data;
   })
   .catch(error => console.error('Error fetching PLU data:', error));
+
+function updateSavedSearches() {
+  savedSearchesDiv.innerHTML = '';
+  savedSearches.forEach(search => {
+    savedSearchesDiv.innerHTML += `<p>${search}</p>`;
+  });
+}
