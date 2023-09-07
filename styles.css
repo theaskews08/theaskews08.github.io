@@ -20,7 +20,7 @@
 /* Custom Styles */
 body {
   font-family: 'Helvetica', sans-serif;
-  background-color: #000000;  /* Solid black background */
+  background-color: #000000;
   color: #f1f1f1;
   margin: 0;
   padding: 20px;
@@ -54,12 +54,20 @@ h1 {
   text-shadow: 2px 2px 4px #333;
 }
 
-input[type="text"] {
+/* Search bar with magnifying glass */
+input.search {
+  background: url('magnifying-glass-icon.png') no-repeat scroll 7px 50%;
+  padding-left: 30px;
   width: 80%;
   padding: 15px;
   border: none;
   border-radius: 25px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Font size for 'Created by Brian Askew' */
+p.createdBy {
+  font-size: 16px;
 }
 
 #clearButton,
