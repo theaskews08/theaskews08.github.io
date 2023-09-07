@@ -54,17 +54,34 @@ h1 {
   text-shadow: 2px 2px 4px #333;
 }
 
-/* Updated Search bar */
+/* Search bar with Animation */
+.search-box {
+  position: relative;
+}
+
 #searchInput {
-  width: 80%;
-  padding: 12px;
+  width: 100%;
+  padding: 12px 24px;
   border: none;
   border-radius: 25px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: width 0.4s ease-in-out;
+}
+
+.search-box:hover #searchInput {
+  width: 120%;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  font-size: 18px;
 }
 
 /* Font size for 'Created by Brian Askew' */
-p {
+p.createdBy {
   font-size: 16px;
 }
 
@@ -106,10 +123,10 @@ a:hover {
     width: 100%;
     padding: 15px;
   }
-  h1, p, #searchInput, button {
+  h1, p, input[type="text"], button {
     font-size: 1.5em;
   }
-  #searchInput, button {
+  input[type="text"], button {
     width: 100%;
   }
   img {
