@@ -1,21 +1,3 @@
-/* CSS Reset or Normalization */
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button;
-  appearance: button;
-}
-
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  appearance: button;
-  font: inherit;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 5px;
-}
-
 /* Custom Styles */
 body {
   font-family: Arial, sans-serif;
@@ -46,17 +28,26 @@ h1 {
   margin-bottom: 10px;
 }
 
-/* Rounded corners for search box and buttons */
 #searchInput,
 #clearButton,
-#exitButton {
-  border-radius: 12px;  /* You can adjust the radius as needed */
+#exitButton,
+#saveButton,
+#exportButton {
+  border-radius: 12px;
+  margin: 5px;
 }
 
-/* Add padding between buttons */
-#clearButton,
-#exitButton {
-  margin: 5px;  /* Add 5px margin to separate the buttons */
+#savedSearches {
+  margin-top: 20px;
+  border: 1px solid teal;
+  padding: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+p {
+  font-size: 16px;
+  margin-bottom: 10px;
 }
 
 /* Media Query for Mobile Devices */
