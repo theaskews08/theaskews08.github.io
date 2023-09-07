@@ -55,21 +55,36 @@ h1 {
 }
 
 /* Search bar with magnifying glass */
-input.search {
-  background: url('magnifying-glass-icon.png') no-repeat scroll 7px 50%;
-  padding-left: 30px;
+.search-box {
+  position: relative;
   width: 80%;
+  margin: 20px auto;
+}
+
+.search-input {
   padding: 15px;
+  padding-left: 40px;
+  width: 100%;
   border: none;
   border-radius: 25px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
+.search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2em;
+  cursor: text;
+}
+
 /* Font size for 'Created by Brian Askew' */
-p.createdBy {
+p {
   font-size: 16px;
 }
 
+/* Animated buttons */
 #clearButton,
 #exitButton {
   margin: 20px auto;
@@ -116,40 +131,5 @@ a:hover {
   }
   img {
     max-width: 100%;
-  }
-
-/* Animated Search Box */
-.search-box {
-  position: relative;
-  width: 100%;
-}
-
-.search-input {
-  width: 100%;
-  padding: 10px;
-  padding-left: 40px;  /* Space for the magnifying glass */
-  border-radius: 25px; /* Rounded corners */
-}
-
-.search-icon {
-  position: absolute;
-  left: 10px;  /* Centered horizontally */
-  top: 50%;   /* Centered vertically */
-  transform: translateY(-50%);
-  font-size: 1.2em;
-  cursor: text;
-}
-
-/* Add animations */
-.search-input:focus + .search-icon {
-  animation: rotateIcon 0.5s ease-in-out;
-}
-
-@keyframes rotateIcon {
-  from {
-    transform: translateY(-50%) rotate(0deg);
-  }
-  to {
-    transform: translateY(-50%) rotate(360deg);
   }
 }
