@@ -31,6 +31,13 @@ searchInput.addEventListener('input', function() {
   }
 });
 
+// Close keyboard on "Enter" key press
+searchInput.addEventListener('keyup', function(event) {
+  if (event.keyCode === 13) {
+    searchInput.blur();
+  }
+});
+
 clearButton.addEventListener('click', function() {
   searchInput.value = '';
   outputLabel.textContent = '';
