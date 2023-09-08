@@ -14,34 +14,34 @@ const recognition = new SpeechRecognition();
 recognition.lang = 'en-US';
 
 // Event Listeners
-searchInput.addEventListener('input', function () {
+searchInput.addEventListener('input', function() {
   performSearch();
 });
 
 // Voice Search Event Listener
-voiceButton.addEventListener('click', function () {
+voiceButton.addEventListener('click', function() {
   recognition.start();
 });
 
-recognition.addEventListener('result', function (e) {
+recognition.addEventListener('result', function(e) {
   const transcript = e.results[0][0].transcript;
   searchInput.value = transcript;
   performSearch();
 });
 
 // Close keyboard on "Enter" key press
-searchInput.addEventListener('keyup', function (event) {
+searchInput.addEventListener('keyup', function(event) {
   if (event.keyCode === 13) {
     searchInput.blur();
   }
 });
 
-clearButton.addEventListener('click', function () {
+clearButton.addEventListener('click', function() {
   searchInput.value = '';
   outputLabel.textContent = '';
 });
 
-exitButton.addEventListener('click', function () {
+exitButton.addEventListener('click', function() {
   window.close();
 });
 
@@ -55,8 +55,8 @@ fetch('./plu_data.json')
 
 function performSearch() {
   const searchTerm = searchInput.value.toLowerCase();
-  let foundItems = pluData.filter(item =>
-    item.Name.toLowerCase().includes(searchTerm) ||
+  let foundItems = pluData.filter(item =>  
+    item.Name.toLowerCase().includes(searchTerm) ||  
     item['PLU Code'].toString().includes(searchTerm)
   );
 
@@ -67,7 +67,7 @@ function performSearch() {
   outputLabel.innerHTML = '';
 
   // Show the first 5 matched items as suggestions
-  for (let i = 0; i < Math.min(5, foundItems.length); i++) {
+  for(let i = 0; i < Math.min(5, foundItems.length); i++) {
     outputLabel.innerHTML += `<a href="https://www.google.com/search?q=${foundItems[i].Name}">${foundItems[i].Name}</a> (PLU Code: ${foundItems[i]['PLU Code']})<br>`;
   }
 
