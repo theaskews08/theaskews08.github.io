@@ -2,10 +2,11 @@
 let pluData = [];
 
 // Get DOM elements
-const searchInput = document.querySelector('input[type="search"]');
+const searchInput = document.getElementById('searchInput');
 const outputLabel = document.getElementById('outputLabel');
 const clearButton = document.getElementById('clearButton');
 const exitButton = document.getElementById('exitButton');
+const voiceButton = document.getElementById('voiceButton');
 
 // Event Listeners
 searchInput.addEventListener('input', function() {
@@ -45,6 +46,10 @@ clearButton.addEventListener('click', function() {
 
 exitButton.addEventListener('click', function() {
   window.close();
+});
+
+voiceButton.addEventListener('click', function() {
+  // Implement voice search here
 });
 
 // Fetch data from plu_data.json and update pluData
