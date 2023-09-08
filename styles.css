@@ -99,6 +99,19 @@ form:focus-within {
   width: 250px;
 }
 
+/* New Styles for Voice Button */
+#voiceButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #000;
+  position: absolute;
+  right: 45px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 /* Existing Button Styles */
 #clearButton,
 #exitButton {
