@@ -58,21 +58,23 @@ h1 {
 form {
   position: relative;
   display: inline-block;
-  width: 60px;  /* Increased width for better touch area */
-  height: 60px;  /* Increased height for better touch area */
+  width: 60px;
+  height: 60px;
   background: white;
-  border-radius: 30px;  /* Adjusted for new dimensions */
-  padding: 10px;  /* Increased padding for better touch area */
+  border-radius: 30px;
+  padding: 5px;
   border: 4px solid white;
   transition: width 0.5s ease;
 }
 
 input[type="search"] {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   border: none;
-  padding: 10px;  /* Increased padding for better touch area */
+  padding: 0;
   outline: none;
   background: none;
   font-size: 18px;
@@ -86,10 +88,10 @@ input[type="search"]::placeholder {
 
 i.fa-search {
   position: absolute;
-  right: 10px;  /* Adjusted for new dimensions */
+  right: 5px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 24px;  /* Increased for better visibility and touch */
+  font-size: 20px;
   color: #000;
 }
 
