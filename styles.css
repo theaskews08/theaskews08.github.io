@@ -1,4 +1,11 @@
-/* CSS Reset or Normalization */
+#voiceSearch {
+  position: absolute;
+  right: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+} CSS Reset or Normalization */
 [type="reset"],
 [type="submit"] {
   -webkit-appearance: button;
@@ -165,3 +172,4 @@ a:hover {
     max-width: 100%;
   }
 }
+
