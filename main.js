@@ -6,54 +6,9 @@ const searchInput = document.querySelector('input[type="search"]');
 const outputLabel = document.getElementById('outputLabel');
 const clearButton = document.getElementById('clearButton');
 const exitButton = document.getElementById('exitButton');
-const voiceButton = document.getElementById('voiceButton');
-
-// Initialize SpeechRecognition API
-const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-const recognition = new SpeechRecognition();
-recognition.lang = 'en-US';
 
 // Event Listeners
 searchInput.addEventListener('input', function() {
-  performSearch();
-});
-
-// Voice Search Event Listener
-voiceButton.addEventListener('click', function() {
-  recognition.start();
-});
-
-recognition.addEventListener('result', function(e) {
-  const transcript = e.results[0][0].transcript;
-  searchInput.value = transcript;
-  performSearch();
-});
-
-// Close keyboard on "Enter" key press
-searchInput.addEventListener('keyup', function(event) {
-  if (event.keyCode === 13) {
-    searchInput.blur();
-  }
-});
-
-clearButton.addEventListener('click', function() {
-  searchInput.value = '';
-  outputLabel.textContent = '';
-});
-
-exitButton.addEventListener('click', function() {
-  window.close();
-});
-
-// Fetch data from plu_data.json and update pluData
-fetch('./plu_data.json')
-  .then(response => response.json())
-  .then(data => {
-    pluData = data;
-  })
-  .catch(error => console.error('Error fetching PLU data:', error));
-
-function performSearch() {
   const searchTerm = searchInput.value.toLowerCase();
   let foundItems = pluData.filter(item =>  
     item.Name.toLowerCase().includes(searchTerm) ||  
@@ -74,4 +29,28 @@ function performSearch() {
   if (foundItems.length === 0) {
     outputLabel.textContent = 'Not found';
   }
-}
+});
+
+// Close keyboard on "Enter" key press
+searchInput.addEventListener('keyup', function(event) {
+  if (event.keyCode === 13) {
+    searchInput.blur();
+  }
+});
+
+clearButton.addEventListener('click', function() {
+  searchInput.value = '';
+  outputLabel.textContent = '';
+});
+
+exitButton.addEventListener('click', function() {
+  window.close();
+});
+
+// Fetch data from plu_data.json and update pluData
+fetch('./plu_data.json')  
+  .then(response => response.json())
+  .then(data => {
+    pluData = data;
+  })
+  .catch(error => console.error('Error fetching PLU data:', error));
