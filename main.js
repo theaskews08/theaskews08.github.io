@@ -36,14 +36,10 @@ clearButton.addEventListener('click', function() {
   outputLabel.textContent = '';
 });
 
-exitButton.addEventListener('click', function() {
+// Define exit function
+function exit() {
   window.close();
-});
+}
 
-// Fetch data from plu_data.json and update pluData
-fetch('./plu_data.json')  
-  .then(response => response.json())
-  .then(data => {
-    pluData = data;
-  })
-  .catch(error => console.error('Error fetching PLU data:', error));
+// Set onclick attribute for exit button
+exitButton.onclick = exit;
