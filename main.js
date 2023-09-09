@@ -1,4 +1,4 @@
-// Initialize empty array for PLU data
+ // Initialize empty array for PLU data
 let pluData = [];
 
 // Get DOM elements
