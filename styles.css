@@ -1,64 +1,64 @@
-/* CSS Reset or Normalization */ 
-[type="reset"], 
-[type="submit"] { 
-  -webkit-appearance: button; 
-  appearance: button; 
-  font: inherit; 
-} 
+/* CSS Reset or Normalization */
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  appearance: button;
+  font: inherit;
+}
 
-::-webkit-file-upload-button { 
-  -webkit-appearance: button; 
-  appearance: button; 
-  font: inherit; 
-} 
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  appearance: button;
+  font: inherit;
+}
 
-* { 
-  box-sizing: border-box; 
-  padding: 0; 
-  margin: 0; 
-} 
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 
-/* Custom Styles */ 
-body { 
-  font-family: 'Helvetica', sans-serif; 
-  background-color: #000000; 
-  color: #f1f1f1; 
-  margin: 0; 
-  padding: 5px; 
-  text-align: center; 
-} 
+/* Custom Styles */
+body {
+  font-family: 'Helvetica', sans-serif;
+  background-color: #000000;
+  color: #f1f1f1;
+  margin: 0;
+  padding: 5px;
+  text-align: center;
+}
 
-.container { 
-  border: 2px solid #333; 
-  margin: auto; 
-  width: 99%; /* Adjusted for full-width */
-  text-align: center; 
-  padding: 10px; /* Reduced Padding */
-} 
+.container {
+  border: 2px solid #333;
+  margin: auto;
+  width: 90%; /* Width reduced to fit within a 1000px container */
+  text-align: center;
+  padding: 10px;
+}
 
-img { 
-  margin: 10px auto; 
-  height: auto; 
-  width: 99%; /* Full width */
-} 
+img {
+  margin: 10px auto;
+  height: auto;
+  width: 90%; /* Width reduced to fit within a 1000px container */
+}
 
-h1 { 
-  font-size: 2em; 
-  margin-bottom: 10px; 
-  text-transform: uppercase; 
-} 
+h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
 
-.text { 
-  font-size: 1.5em; 
-  font-weight: 600; 
-  color: #ffffff; 
-  text-shadow: 2px 2px 4px #333; 
-} 
+.text {
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px #333;
+}
 
 input#searchInput {
   margin: 10px auto;
   display: block;
-  width: 98%; /* Full width */
+  width: 90%; /* Width reduced to fit within a 1000px container */
   padding: 10px;
   background-color: #ffffff;
   color: #333;
@@ -66,31 +66,30 @@ input#searchInput {
   border-radius: 25px;
 }
 
-p.createdBy { 
-  font-size: 1em; 
-} 
+p.createdBy {
+  font-size: 1em;
+}
 
-#clearButton, 
-#exitButton { 
-  margin: 10px auto; 
-  display: block; 
-  width: 98%; /* Full width */
-  padding: 10px; 
-  background-color: #4CAF50; 
-  color: white; 
-  border: none; 
-  border-radius: 25px; 
-} 
+#clearButton,
+#exitButton {
+  margin: 10px auto;
+  display: block;
+  width: 90%; /* Width reduced to fit within a 1000px container */
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 25px;
+}
 
-/* Media Queries can be adjusted or omitted if not needed */
-@media (max-width: 768px) { 
-  h1, p, input[type="text"], button { 
-    font-size: 1.2em; 
-  } 
-  input[type="text"], button { 
-    width: 100%; 
-  } 
-  img { 
-    width: 100%; 
-  } 
+@media (max-width: 768px) {
+  h1, p, input[type="text"], button {
+    font-size: 1.2em;
+  }
+  input[type="text"], button {
+    width: 100%;
+  }
+  img {
+    width: 100%;
+  }
 }
