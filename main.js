@@ -35,15 +35,3 @@ clearButton.addEventListener('click', function() {
   searchInput.value = '';
   outputLabel.textContent = '';
 });
-
-// Define exit function
-function exit() {
-  window.close();
-}
-
-// Set onclick attribute for exit button
-exitButton.onclick = exit;
-
-// Move magnifying glass icon inside search bar
-const searchIcon = document.querySelector('.search-icon');
-searchInput.appendChild(searchIcon);
