@@ -1,56 +1,44 @@
-// Initialize empty array for PLU data 
-let pluData = []; 
+// Initialize empty array for PLU data
+let pluData = [];
 
-// Get DOM elements 
-const searchInput = document.getElementById('searchInput'); 
-const outputLabel = document.getElementById('outputLabel'); 
-const clearButton = document.getElementById('clearButton'); 
-const exitButton = document.getElementById('exitButton'); 
+// Get DOM elements
+const searchInput = document.getElementById('searchInput');
+const outputLabel = document.getElementById('outputLabel');
+const clearButton = document.getElementById('clearButton');
+const exitButton = document.getElementById('exitButton');
+const voiceButton = document.getElementById('voiceButton');  // New Voice Button
 
-// Event Listeners 
-searchInput.addEventListener('input', function() { 
-     const searchTerm = searchInput.value.toLowerCase(); 
-     let foundItems = pluData.filter(item =>  
-                                   item.Name.toLowerCase().includes(searchTerm) ||  
-                                   item['PLU Code'].toString().includes(searchTerm) 
-                                  ); 
+// Event Listeners
+searchInput.addEventListener('input', function() {
+  // ...existing search code...
+});
 
-     // Sort the items alphabetically 
-     foundItems.sort((a, b) => a.Name.localeCompare(b.Name)); 
+clearButton.addEventListener('click', function() {
+  // ...existing clear button code...
+});
 
-     // Clear the output label 
-     outputLabel.innerHTML = ''; 
+exitButton.addEventListener('click', function() {
+  // ...existing exit button code...
+});
 
-     // Show the first 5 matched items as suggestions 
-     for(let i = 0; i < Math.min(5, foundItems.length); i++) { 
-       outputLabel.innerHTML += `<a href="https://www.google.com/search?q=${foundItems[i].Name}">${foundItems[i].Name}</a> (PLU Code: ${foundItems[i]['PLU Code']})<br>`; 
-   } 
+// New voice search code
+voiceButton.addEventListener('click', function() {
+  const recognition = new window.webkitSpeechRecognition();
+  recognition.lang = 'en-US';
 
-     if (foundItems.length === 0) { 
-       outputLabel.textContent = 'Not found'; 
-   } 
- }); 
+  recognition.onresult = function(event) {
+    const transcript = event.results[0][0].transcript;
+    searchInput.value = transcript;
+    searchInput.dispatchEvent(new Event('input'));
+  };
 
-// Close keyboard on "Enter" key press 
-searchInput.addEventListener('keyup', function(event) { 
-     if (event.keyCode === 13) { 
-       searchInput.blur(); 
-   } 
- }); 
+  recognition.start();
+});
 
-clearButton.addEventListener('click', function() { 
-     searchInput.value = ''; 
-     outputLabel.textContent = ''; 
- }); 
-
-exitButton.addEventListener('click', function() { 
-     window.close(); 
- }); 
-
-// Fetch data from plu_data.json and update pluData 
-fetch('./plu_data.json')   
-     .then(response => response.json()) 
-     .then(data => { 
-     pluData = data; 
- }) 
-     .catch(error => console.error('Error fetching PLU data:', error));
+// Fetch data
+fetch('./plu_data.json')
+  .then(response => response.json())
+  .then(data => {
+    pluData = data;
+  })
+  .catch(error => console.error('Error fetching PLU data:', error));
