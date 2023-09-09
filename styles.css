@@ -31,7 +31,7 @@ body {
 .container { 
   border: 2px solid #333; 
   margin: auto; 
-  width: 98%; /* Adjusted for full-width */
+  width: 99%; /* Adjusted for full-width */
   text-align: center; 
   padding: 10px; /* Reduced Padding */
 } 
@@ -39,7 +39,7 @@ body {
 img { 
   margin: 10px auto; 
   height: auto; 
-  width: 98%; /* Full width */
+  width: 99%; /* Full width */
 } 
 
 h1 { 
