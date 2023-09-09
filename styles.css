@@ -103,15 +103,14 @@ a:hover {
 }
 
 /* Voice button */
-#voiceButton {
-  background-color: transparent;
+.mic-button {
+  background: none;
   border: none;
-  cursor: pointer;
   font-size: 24px;
-  padding: 10px;
-  color: #00bcd4;
-}
-
-#voiceButton:hover {
-  color: #018a99;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: #333;
 }
