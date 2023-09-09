@@ -1,135 +1,120 @@
 /* CSS Reset or Normalization */ 
-[type="reset"], 
-[type="submit"] { 
-  -webkit-appearance: button; 
-  appearance: button; 
-} 
-
-::-webkit-file-upload-button { 
-  -webkit-appearance: button; 
-  appearance: button; 
-  font: inherit; 
-} 
-
-* { 
-  box-sizing: border-box; 
-  padding: 0; 
-  margin: 0; 
-} 
-
-/* Custom Styles */ 
-body { 
-  font-family: 'Helvetica', sans-serif; 
-  background-color: #000000; 
-  color: #f1f1f1; 
-  margin: 0; 
-  padding: 20px; 
-  text-align: center; 
-} 
-
-.container { 
-  border: 2px solid #333; 
-  margin: auto; 
-  max-width: 960px; 
-  text-align: center; 
-  padding: 20px; 
-} 
-
-img { 
-  margin: 20px auto; 
-  height: auto; 
-  max-width: 80%; 
-} 
-
-h1 { 
-  font-size: 32px; 
-  margin-bottom: 20px; 
-  text-transform: uppercase; 
-} 
-
-.text { 
-  font-size: 24px; 
-  font-weight: 600; 
-  color: #ffffff; 
-  text-shadow: 2px 2px 4px #333; 
-} 
-
-/* Search bar with microphone inside */
-.search-box {
-  position: relative;
-  width: 80%;
-  margin: auto;
-}
-
-input.search {
-  padding: 15px;
-  padding-right: 40px; /* Adjust padding to not overlap the microphone */
-  width: 100%;
-  border: none;
-  border-radius: 25px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-#micButton {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-/* Font size for 'Created by Brian Askew' */ 
-p.createdBy { 
-  font-size: 16px; 
-} 
-
-#clearButton, 
-#exitButton { 
-  margin: 20px auto; 
-  display: block; 
-  width: 80%; 
-  padding: 15px; 
-  background-color: #4CAF50; 
-  color: white; 
-  border: none; 
-  border-radius: 25px; 
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); 
-  transition: background-color 0.3s ease, transform 0.3s ease; 
-} 
-
-#clearButton:hover, 
-#exitButton:hover { 
-  background-color: #45a049; 
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); 
-  transform: translateY(-3px); 
-} 
-
-a { 
-  color: #00bcd4; 
-  text-decoration: none; 
-  font-size: 18px; 
-  transition: color 0.3s ease; 
-} 
-
-a:hover { 
-  color: #018a99; 
-} 
-
-/* Media Query for Mobile Devices */ 
-@media (max-width: 768px) { 
-  .container { 
-    width: 100%; 
-    padding: 15px; 
-  } 
-  h1, p, input[type="text"], button { 
-    font-size: 1.5em; 
-  } 
-  input[type="text"], button { 
-    width: 100%; 
-  } 
-  img { 
-    max-width: 100%; 
-  } 
-}
+ [type="reset"], 
+ [type="submit"] { 
+   -webkit-appearance: button; 
+   appearance: button; 
+ } 
+  
+ ::-webkit-file-upload-button { 
+   -webkit-appearance: button; 
+   appearance: button; 
+   font: inherit; 
+ } 
+  
+ * { 
+   box-sizing: border-box; 
+   padding: 0; 
+   margin: 0; 
+ } 
+  
+ /* Custom Styles */ 
+ body { 
+   font-family: 'Helvetica', sans-serif; 
+   background-color: #000000; 
+   color: #f1f1f1; 
+   margin: 0; 
+   padding: 20px; 
+   text-align: center; 
+ } 
+  
+ .container { 
+   border: 2px solid #333; 
+   margin: auto; 
+   max-width: 960px; 
+   text-align: center; 
+   padding: 20px; 
+ } 
+  
+ img { 
+   margin: 20px auto; 
+   height: auto; 
+   max-width: 80%; 
+ } 
+  
+ h1 { 
+   font-size: 32px; 
+   margin-bottom: 20px; 
+   text-transform: uppercase; 
+ } 
+  
+ .text { 
+   font-size: 24px; 
+   font-weight: 600; 
+   color: #ffffff; 
+   text-shadow: 2px 2px 4px #333; 
+ } 
+  
+ /* Search bar with magnifying glass */ 
+ input.search { 
+   background: url('magnifying-glass-icon.png') no-repeat scroll 7px 50%; 
+   padding-left: 30px; 
+   width: 80%; 
+   padding: 15px; 
+   border: none; 
+   border-radius: 25px; 
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
+ } 
+  
+ /* Font size for 'Created by Brian Askew' */ 
+ p.createdBy { 
+   font-size: 16px; 
+ } 
+  
+ #clearButton, 
+ #exitButton { 
+   margin: 20px auto; 
+   display: block; 
+   width: 80%; 
+   padding: 15px; 
+   background-color: #4CAF50; 
+   color: white; 
+   border: none; 
+   border-radius: 25px; 
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); 
+   transition: background-color 0.3s ease, transform 0.3s ease; 
+ } 
+  
+ #clearButton:hover, 
+ #exitButton:hover { 
+   background-color: #45a049; 
+   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); 
+   transform: translateY(-3px); 
+ } 
+  
+ a { 
+   color: #00bcd4; 
+   text-decoration: none; 
+   font-size: 18px; 
+   transition: color 0.3s ease; 
+ } 
+  
+ a:hover { 
+   color: #018a99; 
+ } 
+  
+ /* Media Query for Mobile Devices */ 
+ @media (max-width: 768px) { 
+   .container { 
+     width: 100%; 
+     padding: 15px; 
+   } 
+   h1, p, input[type="text"], button { 
+     font-size: 1.5em; 
+   } 
+   input[type="text"], button { 
+     width: 100%; 
+   } 
+   img { 
+     max-width: 100%; 
+   } 
+ }
