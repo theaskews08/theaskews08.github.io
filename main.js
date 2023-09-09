@@ -1,13 +1,13 @@
-// Initialize empty array for PLU data
+/* Initialize empty array for PLU data */
 let pluData = [];
 
-// Get DOM elements
+/* Get DOM elements */
 const searchInput = document.getElementById('searchInput');
 const outputLabel = document.getElementById('outputLabel');
 const clearButton = document.getElementById('clearButton');
 const exitButton = document.getElementById('exitButton');
 
-// Event Listeners
+/* Event Listeners */
 searchInput.addEventListener('input', function() {
   const searchTerm = searchInput.value.toLowerCase().split(' ');
   let foundItems = pluData.filter(item => {
@@ -43,3 +43,7 @@ function exit() {
 
 // Set onclick attribute for exit button
 exitButton.onclick = exit;
+
+// Move magnifying glass icon inside search bar
+const searchIcon = document.querySelector('.search-icon');
+searchInput.appendChild(searchIcon);
