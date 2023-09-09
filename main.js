@@ -13,16 +13,11 @@ console.log("DOM elements fetched:", searchInput, outputLabel, clearButton, exit
 // Event Listeners
 searchInput.addEventListener('input', function() {
   console.log("Search input event triggered.");
-  const searchTerm = searchInput.value.toLowerCase().split(' ');
-
-  let foundItems = pluData.filter(item => {
-    const itemNameTokens = item.Name.toLowerCase().split(' ');
-
-    return searchTerm.every(term => {
-      return itemNameTokens.some(token => token.includes(term));
-    }) ||  
-    item['PLU Code'].toString().includes(searchTerm.join(' '));
-  });
+  const searchTerm = searchInput.value.toLowerCase();
+  let foundItems = pluData.filter(item =>  
+    item.Name.toLowerCase().includes(searchTerm) ||  
+    item['PLU Code'].toString().includes(searchTerm)
+  );
 
   // Sort the items alphabetically
   foundItems.sort((a, b) => a.Name.localeCompare(b.Name));
