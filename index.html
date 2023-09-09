@@ -1,24 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Search Bar with Banana Emoji</title>
-  <style>
-    .search-bar {
-      width: 200px;
-      margin: 0 auto;
-    }
-
-    .search-icon {
-      width: 20px;
-      height: 20px;
-      float: left;
-    }
-  </style>
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>PLU Lookup Tool</title> 
+  <link rel="stylesheet" href="styles.css"> 
+  <script src="main.js" defer></script> 
 </head>
-<body>
-  <div class="search-bar">
-    <input type="text" id="searchInput" placeholder="Search...">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Banana_emoji.svg/1200px-Banana_emoji.svg.png" alt="Search icon" class="search-icon">
-  </div>
-</body>
+<body> 
+  <div class="container"> 
+    <img src="logobw.png" alt="Logo"> 
+    <h1><span class="text">PLU Lookup Tool</span></h1> 
+    <div class="search-box"> 
+      <input id="searchInput" type="text" placeholder="Search"> <!-- Removed the span containing the magnifying glass -->
+    </div> 
+    <div id="outputLabel"></div> 
+    <button id="clearButton">Clear</button> 
+    <button id="exitButton">Exit</button> 
+    <p>Created by Brian Askew</p> 
+  </div> 
+</body> 
 </html>
