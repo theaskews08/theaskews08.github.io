@@ -3,6 +3,7 @@
 [type="submit"] { 
   -webkit-appearance: button; 
   appearance: button; 
+  font: inherit; 
 } 
 
 ::-webkit-file-upload-button { 
@@ -54,30 +55,17 @@ h1 {
   text-shadow: 2px 2px 4px #333; 
 } 
 
-/* Search bar with microphone inside */
-.search-box {
-  position: relative;
+/* Modified Search bar styles */
+input#searchInput {
+  margin: 20px auto;
+  display: block;
   width: 80%;
-  margin: auto;
-}
-
-input.search {
   padding: 15px;
-  padding-right: 40px; /* Adjust padding to not overlap the microphone */
-  width: 100%;
-  border: none;
+  background-color: #ffffff;
+  color: #333;
+  border: 6px solid #4CAF50;  /* 6px thick border matching the button color */
   border-radius: 25px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-#micButton {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Font size for 'Created by Brian Askew' */ 
