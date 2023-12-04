@@ -33,13 +33,13 @@ body {
   margin: auto;
   width: 90%; /* Width reduced to fit within a 1000px container */
   text-align: center;
-  padding: 10px;
+  padding: 5px;
 }
 
 img {
   margin: 10px auto;
   height: auto;
-  width: 90%; /* Width reduced to fit within a 1000px container */
+  width: 92%; /* Width reduced to fit within a 1000px container */
 }
 
 h1 {
