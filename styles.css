@@ -31,7 +31,7 @@ body {
 .container {
   border: 2px solid #333;
   margin: auto;
-  width: 90%; /* Width reduced to fit within a 1000px container */
+  width: 95%; /* Width reduced to fit within a 1000px container */
   text-align: center;
   padding: 5px;
 }
@@ -39,12 +39,12 @@ body {
 img {
   margin: 10px auto;
   height: auto;
-  width: 92%; /* Width reduced to fit within a 1000px container */
+  width: 95%; /* Width reduced to fit within a 1000px container */
 }
 
 h1 {
   font-size: 2em;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   text-transform: uppercase;
 }
 
@@ -63,7 +63,7 @@ input#searchInput {
   background-color: #ffffff;
   color: #333;
   border: 6px solid #4CAF50;
-  border-radius: 25px;
+  border-radius: 15px;
 }
 
 p.createdBy {
