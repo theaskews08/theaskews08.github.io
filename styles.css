@@ -24,22 +24,22 @@ body {
   background-color: #000000;
   color: #f1f1f1;
   margin: 0;
-  padding: 0; /* Removed 5px padding */
+  padding: 0;
   text-align: center;
 }
 
 .container {
   border: 2px solid #333;
-  margin: 0; /* Changed from auto */
-  width: 100%; /* Changed to 100% */
+  margin: 0;
+  width: 100%;
   text-align: center;
   padding: 5px;
 }
 
 img {
-  margin: 0; /* Changed from 10px auto */
+  margin: 0;
   height: auto;
-  width: 100%; /* Changed to 100% */
+  width: 100%;
 }
 
 h1 {
@@ -56,30 +56,35 @@ h1 {
 }
 
 input#searchInput {
-  margin: 0; /* Changed from 10px auto */
+  margin: 0;
   display: block;
-  width: 100%; /* Changed to 100% */
+  width: 100%;
   padding: 10px;
   background-color: #ffffff;
   color: #333;
-  border: 6px solid #008080; /* Changed color to dark teal */
+  border: 6px solid #008080;
   border-radius: 15px;
 }
 
-p.createdBy {
-  font-size: 1em;
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: 2px solid white;
+  background-color: #008080;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-#clearButton,
-#exitButton {
-  margin: 0; /* Changed from 10px auto */
-  display: block;
-  width: 100%; /* Changed to 100% */
-  padding: 10px;
-  background-color: #008080; /* Changed color to dark teal */
-  color: white;
-  border: none;
-  border-radius: 25px;
+button:hover {
+  background-color: white;
+  color: #008080;
+  box-shadow: 0 0 10px white;
+}
+
+button:active {
+  transform: scale(0.95);
 }
 
 @media (max-width: 768px) {
