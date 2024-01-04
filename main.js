@@ -1,37 +1,18 @@
-// Initialize empty array for PLU data
-let pluData = [];
-
-// Get DOM elements
-const searchInput = document.getElementById('searchInput');
-const outputLabel = document.getElementById('outputLabel');
-const clearButton = document.getElementById('clearButton');
-const exitButton = document.getElementById('exitButton');
-const saveButton = document.getElementById('saveButton');
-const savedList = document.getElementById('savedList');
-const voiceSearchButton = document.getElementById('voiceSearchButton');
-let savedItems = [];
-
-let searchTimeoutToken;
-
-// Debounced Search Functionality
-searchInput.addEventListener('input', function() {
-  clearTimeout(searchTimeoutToken);
-  searchTimeoutToken = setTimeout(() => performSearch(), 300);
-});
-
 function performSearch() {
-  // ... existing search logic ...
+  const searchTerm = searchInput.value.toLowerCase();
+  let foundItems = pluData.filter(item => {
+    return item.Name.toLowerCase().includes(searchTerm) || 
+           item['PLU Code'].toString().includes(searchTerm);
+  });
+
+  outputLabel.innerHTML = '';
+  foundItems.forEach(item => {
+    // Update the URL as needed. Below is an example using Google Search.
+    let searchUrl = `https://www.google.com/search?q=${encodeURIComponent(item.Name)}`;
+    outputLabel.innerHTML += `<div><a href="${searchUrl}" target="_blank">${item.Name} (PLU Code: ${item['PLU Code']})</a></div>`;
+  });
+
+  if (foundItems.length === 0) {
+    outputLabel.textContent = 'No matches found';
+  }
 }
-
-clearButton.addEventListener('click', function() {
-  searchInput.value = '';
-  outputLabel.textContent = '';
-});
-
-exitButton.addEventListener('click', function() {
-  // ... exit logic ...
-});
-
-saveButton.addEventListener('click', function() {
-  const searchTerm = searchInput.value;
-  if (searchTerm && !savedItems.includes(searchTerm
