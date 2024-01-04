@@ -1,19 +1,14 @@
 // Initialize empty array to hold PLU data
-// Make sure to populate this array with your PLU data
-let pluData = [];
+let pluData = []; // Populate this with your data
 
 // Get DOM elements
 const searchInput = document.getElementById('searchInput');
 const outputLabel = document.getElementById('outputLabel');
 const clearButton = document.getElementById('clearButton');
 const exitButton = document.getElementById('exitButton');
+const voiceSearchButton = document.getElementById('voiceSearchButton'); // Ensure you have this button in your HTML
 
-// Event Listener for search input
-searchInput.addEventListener('input', function() {
-  performSearch();
-});
-
-// Function to perform search
+// Perform Search Function
 function performSearch() {
   const searchTerm = searchInput.value.toLowerCase();
   let foundItems = pluData.filter(item => {
@@ -32,13 +27,30 @@ function performSearch() {
   }
 }
 
-// Event Listener for clear button
+// Search Button Event Listener
+searchInput.addEventListener('input', performSearch);
+
+// Voice Search Functionality
+if ('webkitSpeechRecognition' in window) {
+  const recognition = new webkitSpeechRecognition();
+  recognition.onresult = function(event) {
+    searchInput.value = event.results[0][0].transcript;
+    performSearch();
+  };
+  voiceSearchButton.addEventListener('click', function() {
+    recognition.start();
+  });
+} else {
+  voiceSearchButton.style.display = 'none'; // Hide if not supported
+}
+
+// Clear Button Event Listener
 clearButton.addEventListener('click', function() {
   searchInput.value = '';
   outputLabel.textContent = '';
 });
 
-// Event Listener for exit button
+// Exit Button Event Listener
 exitButton.addEventListener('click', function() {
-  window.close();
+  window.close(); // Note: This works only for pop-up windows opened via JavaScript
 });
