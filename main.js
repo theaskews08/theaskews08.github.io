@@ -1,56 +1,47 @@
 // Initialize empty array to hold PLU data
-let pluData = []; // Populate this with your data
+let pluData = [];
 
 // Get DOM elements
 const searchInput = document.getElementById('searchInput');
 const outputLabel = document.getElementById('outputLabel');
 const clearButton = document.getElementById('clearButton');
 const exitButton = document.getElementById('exitButton');
-const voiceSearchButton = document.getElementById('voiceSearchButton'); // Ensure you have this button in your HTML
 
-// Perform Search Function
-function performSearch() {
+// Fetch PLU data from the API
+fetch('https://gregrasmussen.com/store-system/public-plu-data')
+  .then(response => response.json())
+  .then(data => {
+    pluData = data;
+  })
+  .catch(error => console.error('Error fetching PLU data:', error));
+
+// Event Listener for search input
+searchInput.addEventListener('input', function() {
   const searchTerm = searchInput.value.toLowerCase();
   let foundItems = pluData.filter(item => {
-    return item.Name.toLowerCase().includes(searchTerm) || 
-           item['PLU Code'].toString().includes(searchTerm);
+    return item.Name.toLowerCase().includes(searchTerm) ||
+           item['PLU Code'].toString().toLowerCase().includes(searchTerm);
   });
 
+  // Clear the output label
   outputLabel.innerHTML = '';
+
+  // Display the matched items
   foundItems.forEach(item => {
-    let searchUrl = `https://www.google.com/search?q=${encodeURIComponent(item.Name)}`;
-    outputLabel.innerHTML += `<div><a href="${searchUrl}" target="_blank">${item.Name} (PLU Code: ${item['PLU Code']})</a></div>`;
+    outputLabel.innerHTML += `<div>${item.Name || 'Unnamed Item'} (PLU Code: ${item['PLU Code']})</div>`;
   });
 
   if (foundItems.length === 0) {
     outputLabel.textContent = 'No matches found';
   }
-}
+});
 
-// Search Button Event Listener
-searchInput.addEventListener('input', performSearch);
-
-// Voice Search Functionality
-if ('webkitSpeechRecognition' in window) {
-  const recognition = new webkitSpeechRecognition();
-  recognition.onresult = function(event) {
-    searchInput.value = event.results[0][0].transcript;
-    performSearch();
-  };
-  voiceSearchButton.addEventListener('click', function() {
-    recognition.start();
-  });
-} else {
-  voiceSearchButton.style.display = 'none'; // Hide if not supported
-}
-
-// Clear Button Event Listener
+// Event Listeners for clear and exit buttons
 clearButton.addEventListener('click', function() {
   searchInput.value = '';
   outputLabel.textContent = '';
 });
 
-// Exit Button Event Listener
 exitButton.addEventListener('click', function() {
-  window.close(); // Note: This works only for pop-up windows opened via JavaScript
+  window.close(); // Note: This only works for windows opened via script
 });
