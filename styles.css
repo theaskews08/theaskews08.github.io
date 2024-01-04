@@ -24,22 +24,22 @@ body {
   background-color: #000000;
   color: #f1f1f1;
   margin: 0;
-  padding: 5px;
+  padding: 0; /* Removed 5px padding */
   text-align: center;
 }
 
 .container {
   border: 2px solid #333;
-  margin: auto;
-  width: 95%; /* Width reduced to fit within a 1000px container */
+  margin: 0; /* Changed from auto */
+  width: 100%; /* Changed to 100% */
   text-align: center;
   padding: 5px;
 }
 
 img {
-  margin: 10px auto;
+  margin: 0; /* Changed from 10px auto */
   height: auto;
-  width: 95%; /* Width reduced to fit within a 1000px container */
+  width: 100%; /* Changed to 100% */
 }
 
 h1 {
@@ -56,13 +56,13 @@ h1 {
 }
 
 input#searchInput {
-  margin: 10px auto;
+  margin: 0; /* Changed from 10px auto */
   display: block;
-  width: 90%; /* Width reduced to fit within a 1000px container */
+  width: 100%; /* Changed to 100% */
   padding: 10px;
   background-color: #ffffff;
   color: #333;
-  border: 6px solid #4CAF50;
+  border: 6px solid #008080; /* Changed color to dark teal */
   border-radius: 15px;
 }
 
@@ -72,11 +72,11 @@ p.createdBy {
 
 #clearButton,
 #exitButton {
-  margin: 10px auto;
+  margin: 0; /* Changed from 10px auto */
   display: block;
-  width: 90%; /* Width reduced to fit within a 1000px container */
+  width: 100%; /* Changed to 100% */
   padding: 10px;
-  background-color: #4CAF50;
+  background-color: #008080; /* Changed color to dark teal */
   color: white;
   border: none;
   border-radius: 25px;
@@ -85,9 +85,6 @@ p.createdBy {
 @media (max-width: 768px) {
   h1, p, input[type="text"], button {
     font-size: 1.2em;
-  }
-  input[type="text"], button {
-    width: 100%;
   }
   img {
     width: 100%;
