@@ -62,7 +62,7 @@ input#searchInput {
   padding: 10px;
   background-color: #ffffff;
   color: #333;
-  border: 6px solid #008080;
+  border: 6px solid #008080; /* Dark teal border */
   border-radius: 15px;
 }
 
@@ -70,7 +70,7 @@ button {
   padding: 10px 20px;
   margin: 5px;
   border: 2px solid white;
-  background-color: #008080;
+  background-color: #008080; /* Dark teal background */
   color: white;
   border-radius: 5px;
   cursor: pointer;
