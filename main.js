@@ -70,3 +70,36 @@ if ('webkitSpeechRecognition' in window) {
 } else {
   voiceSearchButton.style.display = 'none'; // Hide if not supported
 }
+// ... (other parts of your script) ...
+
+const voiceSearchButton = document.getElementById('voiceSearchButton');
+
+if ('webkitSpeechRecognition' in window) {
+  const recognition = new webkitSpeechRecognition();
+
+  recognition.onstart = function() {
+    // You can update this to show a message when voice search starts
+    console.log("Voice search started. Speak into the microphone.");
+  };
+
+  recognition.onresult = function(event) {
+    searchInput.value = event.results[0][0].transcript;
+    performSearch();
+  };
+
+  voiceSearchButton.addEventListener('click', function() {
+    // Check if microphone permission is granted
+    navigator.permissions.query({ name: 'microphone' }).then(function(permissionStatus) {
+      if (permissionStatus.state === 'granted') {
+        recognition.start();
+      } else if (permissionStatus.state === 'prompt') {
+        alert("Please allow microphone access for voice search.");
+        recognition.start(); // This will prompt for permission
+      } else {
+        alert("Microphone access is required for voice search. Please enable it in your browser settings.");
+      }
+    });
+  });
+} else {
+  voiceSearchButton.style.display = 'none'; // Hide if not supported
+}
