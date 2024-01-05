@@ -55,15 +55,17 @@ if ('webkitSpeechRecognition' in window) {
     searchInput.dispatchEvent(new Event('input'));
   };
 
-  recognition.onerror = function(event) {
-    if (event.error === 'not-allowed') {
-      alert('Microphone access is not allowed. Please enable it to use voice search.');
-    }
-  };
-
   voiceSearchButton.addEventListener('click', function() {
-    // Start voice recognition; this will prompt for microphone permission
-    recognition.start(); 
+    navigator.permissions.query({ name: 'microphone' }).then(function(permissionStatus) {
+      if (permissionStatus.state === 'granted') {
+        recognition.start();
+      } else if (permissionStatus.state === 'prompt') {
+        alert("Please allow microphone access for voice search.");
+        recognition.start(); // This will prompt for permission
+      } else {
+        alert("Microphone access is required for voice search. Please enable it in your browser settings.");
+      }
+    });
   });
 } else {
   voiceSearchButton.style.display = 'none'; // Hide if not supported
