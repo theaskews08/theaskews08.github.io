@@ -1,10 +1,5 @@
-// Initialize with your local PLU data
-let pluData = [
-  { "PLU Code": "3000", "Name": "Alkmene Apples" },
-  { "PLU Code": "3001", "Name": "Small Aurora/Southern Rose Apples" },
-  { "PLU Code": "3002", "Name": "Cantared Apples" },
-  // ... more items ...
-];
+// Initialize empty array for PLU data
+let pluData = [];
 
 // Get DOM elements
 const searchInput = document.getElementById('searchInput');
@@ -12,32 +7,43 @@ const outputLabel = document.getElementById('outputLabel');
 const clearButton = document.getElementById('clearButton');
 const exitButton = document.getElementById('exitButton');
 
-// Event Listener for search input
+let searchTimeoutToken;
+
+// Debounced Search Functionality
 searchInput.addEventListener('input', function() {
-  const searchTerm = searchInput.value.toLowerCase();
+  clearTimeout(searchTimeoutToken);
+  searchTimeoutToken = setTimeout(() => performSearch(), 300); // 300ms debounce
+});
+
+function performSearch() {
+  const searchTerm = searchInput.value.toLowerCase().split(' ');
   let foundItems = pluData.filter(item => {
-    return (item.Name && item.Name.toLowerCase().includes(searchTerm)) ||
-           (item['PLU Code'] && item['PLU Code'].toString().toLowerCase().includes(searchTerm));
+    const itemNameTokens = item.Name.toLowerCase().split(' ');
+    return searchTerm.every(term => itemNameTokens.some(token => token.includes(term))) ||  
+           item['PLU Code'].toString().includes(searchTerm.join(' '));
   });
 
+  // Clear the output label
   outputLabel.innerHTML = '';
-  foundItems.forEach(item => {
-    outputLabel.innerHTML += `<div>${item.Name || 'Unnamed Item'} (PLU Code: ${item['PLU Code']})</div>`;
-  });
+
+  // Displaying results
+  foundItems.sort((a, b) => a.Name.localeCompare(b.Name));
+  for(let i = 0; i < Math.min(5, foundItems.length); i++) {
+    outputLabel.innerHTML += `<a href="https://www.google.com/search?q=${foundItems[i].Name}">${foundItems[i].Name}</a> (PLU Code: ${foundItems[i]['PLU Code']})<br>`;
+  }
 
   if (foundItems.length === 0) {
     outputLabel.textContent = 'No matches found';
   }
-});
+}
 
-// Event Listeners for clear and exit buttons
 clearButton.addEventListener('click', function() {
   searchInput.value = '';
   outputLabel.textContent = '';
 });
 
 exitButton.addEventListener('click', function() {
-  window.close();
+  // Redirect to home page or show a message
+  // window.location.href = 'home.html'; // Redirect to home page
+  alert('Please close this tab to exit.'); // Show message
 });
-
-// Commenting out the voice 
