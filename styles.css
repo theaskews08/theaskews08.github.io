@@ -1,22 +1,5 @@
 /* CSS Reset or Normalization */
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button;
-  appearance: button;
-  font: inherit;
-}
-
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  appearance: button;
-  font: inherit;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
+/* ... (same as before) ... */
 
 /* Custom Styles */
 body {
@@ -30,54 +13,53 @@ body {
 
 .container {
   border: 2px solid #333;
-  margin: 0;
-  width: 100%;
-  text-align: center;
-  padding: 5px;
+  margin: 0 auto; /* Center the container */
+  max-width: 1200px; /* Max-width for large screens, can be adjusted as needed */
+  padding: 1em; /* Use em for scalable padding */
+  box-sizing: border-box; /* Include padding in the width */
 }
 
 img {
-  margin: 0;
+  margin: 0 auto; /* Center the image */
   height: auto;
-  width: 100%;
+  max-width: 100%; /* Limit image size to not exceed its container */
 }
 
 h1 {
-  font-size: 2em;
-  margin-bottom: 5px;
+  font-size: 2rem; /* Use rem for font sizes for scalability */
+  margin-bottom: 0.5em;
   text-transform: uppercase;
 }
 
 .text {
-  font-size: 1.5em;
+  font-size: 1.5rem; /* Use rem for font sizes for scalability */
   font-weight: 600;
   color: #ffffff;
   text-shadow: 2px 2px 4px #333;
 }
 
-input#searchInput {
-  margin: 0;
+input#searchInput, button {
+  width: 90%; /* Reduce width to provide some space on the sides */
+  margin: 0.5em auto; /* Centering and adding margin */
+  padding: 1em; /* Scalable padding */
   display: block;
-  width: 100%;
-  padding: 10px;
   background-color: #ffffff;
   color: #333;
-  border: 6px solid #008080; /* Dark teal border */
+  border: 3px solid #008080; /* Dark teal border */
   border-radius: 15px;
+  box-sizing: border-box; /* Include padding and border in the width */
 }
 
 button {
-  padding: 10px 20px;
-  margin: 5px;
-  border: 2px solid white;
   background-color: #008080; /* Dark teal background */
   color: white;
+  border: 2px solid white;
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-button:hover {
+button:hover, button:focus {
   background-color: white;
   color: #008080;
   box-shadow: 0 0 10px white;
@@ -87,11 +69,34 @@ button:active {
   transform: scale(0.95);
 }
 
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  h1, p, input[type="text"], button {
-    font-size: 1.2em;
+  h1, p, input, button {
+    font-size: 1rem; /* Smaller font size for smaller screens */
   }
+
+  .container, input#searchInput, button {
+    padding: 0.5em; /* Smaller padding for smaller screens */
+    width: 95%; /* Allow more width for smaller screens */
+  }
+
   img {
-    width: 100%;
+    max-width: 95%; /* Allow image to be a bit larger on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further adjustments for very small screens */
+  h1 {
+    font-size: 1.25rem; /* Even smaller font size for very small screens */
+  }
+
+  .container, input#searchInput, button {
+    padding: 0.4em; /* Even smaller padding for very small screens */
+    width: 98%; /* Use almost full width on very small screens */
+  }
+
+  img {
+    max-width: 98%; /* Use almost full width for images on very small screens */
   }
 }
