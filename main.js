@@ -1,6 +1,5 @@
 // Initialize with your local PLU data
 let pluData = [
-  [
   {
     "PLU Code": "Alkmene Apples3000",
     "Name": ""
