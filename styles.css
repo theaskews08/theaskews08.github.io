@@ -1,5 +1,5 @@
 /* CSS Reset or Normalization */
-/* ... (same as before) ... */
+/* ... (existing reset/normalization styles) ... */
 
 /* Custom Styles */
 body {
@@ -13,45 +13,45 @@ body {
 
 .container {
   border: 2px solid #333;
-  margin: 0 auto; /* Center the container */
-  max-width: 1200px; /* Max-width for large screens, can be adjusted as needed */
-  padding: 1em; /* Use em for scalable padding */
-  box-sizing: border-box; /* Include padding in the width */
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 1em;
+  box-sizing: border-box;
 }
 
 img {
-  margin: 0 auto; /* Center the image */
+  margin: 0 auto;
   height: auto;
-  max-width: 100%; /* Limit image size to not exceed its container */
+  max-width: 100%;
 }
 
 h1 {
-  font-size: 2rem; /* Use rem for font sizes for scalability */
+  font-size: 2rem;
   margin-bottom: 0.5em;
   text-transform: uppercase;
 }
 
 .text {
-  font-size: 1.5rem; /* Use rem for font sizes for scalability */
+  font-size: 1.5rem;
   font-weight: 600;
   color: #ffffff;
   text-shadow: 2px 2px 4px #333;
 }
 
 input#searchInput, button {
-  width: 90%; /* Reduce width to provide some space on the sides */
-  margin: 0.5em auto; /* Centering and adding margin */
-  padding: 1em; /* Scalable padding */
+  width: 90%;
+  margin: 0.5em auto;
+  padding: 1em;
   display: block;
   background-color: #ffffff;
   color: #333;
-  border: 3px solid #008080; /* Dark teal border */
+  border: 3px solid #008080;
   border-radius: 15px;
-  box-sizing: border-box; /* Include padding and border in the width */
+  box-sizing: border-box;
 }
 
 button {
-  background-color: #008080; /* Dark teal background */
+  background-color: #008080;
   color: white;
   border: 2px solid white;
   border-radius: 5px;
@@ -69,34 +69,46 @@ button:active {
   transform: scale(0.95);
 }
 
+/* Styles for the predictive items container */
+#predictiveContainer {
+  position: absolute;
+  bottom: 100%;  /* Position it above the input field */
+  width: 90%;    /* Match the width with the input field */
+  /* Add other styling as needed */
+  display: none; /* Initially hidden */
+}
+
+#predictiveContainer.active {
+  display: block; /* Show when input is focused */
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   h1, p, input, button {
-    font-size: 1rem; /* Smaller font size for smaller screens */
+    font-size: 1rem;
   }
 
   .container, input#searchInput, button {
-    padding: 0.5em; /* Smaller padding for smaller screens */
-    width: 95%; /* Allow more width for smaller screens */
+    padding: 0.5em;
+    width: 95%;
   }
 
   img {
-    max-width: 95%; /* Allow image to be a bit larger on smaller screens */
+    max-width: 95%;
   }
 }
 
 @media (max-width: 480px) {
-  /* Further adjustments for very small screens */
   h1 {
-    font-size: 1.25rem; /* Even smaller font size for very small screens */
+    font-size: 1.25rem;
   }
 
   .container, input#searchInput, button {
-    padding: 0.4em; /* Even smaller padding for very small screens */
-    width: 98%; /* Use almost full width on very small screens */
+    padding: 0.4em;
+    width: 98%;
   }
 
   img {
-    max-width: 98%; /* Use almost full width for images on very small screens */
+    max-width: 98%;
   }
 }
