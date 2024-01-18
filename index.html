@@ -11,11 +11,19 @@
     <div class="container">
         <img src="newlogo.jpg" alt="Logo">
         <h1><span class="text">PLU Lookup Tool</span></h1>
+        
+        <!-- Language selection dropdown -->
+        <select id="languageSelect">
+            <option value="en">English</option>
+            <option value="es">EspaÃ±ol</option>
+        </select>
+
         <div class="search-box">
             <input id="searchInput" type="text" placeholder="Search">
-            <!-- Predictive search container added here -->
+            <!-- Predictive search container -->
             <div id="predictiveContainer"></div>
         </div>
+
         <button id="voiceSearchButton">Voice Search</button>
         <div id="outputLabel"></div>
         <button id="clearButton">Clear</button>
