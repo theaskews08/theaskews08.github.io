@@ -3,7 +3,7 @@ let pluData = [];
 
 // Get DOM elements
 const searchInput = document.getElementById('searchInput');
-const outputLabel = document.getElementById('outputLabel');
+const predictiveContainer = document.getElementById('predictiveContainer'); // Container for predictive items
 const clearButton = document.getElementById('clearButton');
 const exitButton = document.getElementById('exitButton');
 
@@ -17,23 +17,31 @@ searchInput.addEventListener('input', function() {
            item['PLU Code'].toString().includes(searchTerm.join(' '));
   });
 
-  // Clear the output label
-  outputLabel.innerHTML = '';
+  // Clear the predictive container
+  predictiveContainer.innerHTML = '';
 
-  // Sort and show the first 5 matched items as suggestions
+  // Sort and show the first 5 matched items as suggestions in predictiveContainer
   foundItems.sort((a, b) => a.Name.localeCompare(b.Name));
   for(let i = 0; i < Math.min(5, foundItems.length); i++) {
-    outputLabel.innerHTML += `<a href="https://www.google.com/search?q=${foundItems[i].Name}">${foundItems[i].Name}</a> (PLU Code: ${foundItems[i]['PLU Code']})<br>`;
+    predictiveContainer.innerHTML += `<a href="https://www.google.com/search?q=${foundItems[i].Name}">${foundItems[i].Name}</a> (PLU Code: ${foundItems[i]['PLU Code']})<br>`;
   }
 
   if (foundItems.length === 0) {
-    outputLabel.textContent = 'Not found';
+    predictiveContainer.textContent = 'Not found';
+  }
+
+  // Show or hide predictive container based on the input
+  if(searchInput.value && foundItems.length > 0) {
+    predictiveContainer.style.display = 'block';
+  } else {
+    predictiveContainer.style.display = 'none';
   }
 });
 
 clearButton.addEventListener('click', function() {
   searchInput.value = '';
-  outputLabel.textContent = '';
+  predictiveContainer.innerHTML = '';
+  predictiveContainer.style.display = 'none';
 });
 
 exitButton.addEventListener('click', function() {
