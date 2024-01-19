@@ -7,7 +7,7 @@ const outputLabel = document.getElementById('outputLabel');
 const clearButton = document.getElementById('clearButton');
 const exitButton = document.getElementById('exitButton');
 
-// Event Listeners
+// Event Listeners for the search input, clear, and exit buttons
 searchInput.addEventListener('input', function() {
   const searchTerm = searchInput.value.toLowerCase().split(' ');
   let foundItems = pluData.filter(item => {
@@ -47,3 +47,20 @@ fetch('./plu_data.json')
     pluData = data;
   })
   .catch(error => console.error('Error fetching PLU data:', error));
+
+// Annyang voice recognition integration
+if (annyang) {
+  // Define the commands
+  var commands = {
+    'search *term': function(term) {
+      searchInput.value = term; // Set the search box value to the spoken term
+      searchInput.dispatchEvent(new Event('input')); // Trigger the search functionality
+    }
+  };
+
+  // Add the defined commands to annyang
+  annyang.addCommands(commands);
+
+  // Start listening for voice commands
+  annyang.start();
+}
