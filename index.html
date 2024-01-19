@@ -9,13 +9,25 @@
 </head>
 <body>
     <div class="container">
+        <!-- Google Translate Widget -->
+        <div id="google_translate_element"></div>
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({
+                    pageLanguage: 'en', 
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                }, 'google_translate_element');
+            }
+        </script>
+        <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script>
+
         <img src="newlogo.jpg" alt="Logo">
         <h1><span class="text">PLU Lookup Tool</span></h1>
         
         <!-- Language Selection Dropdown -->
         <select id="languageSelect">
             <option value="en">English</option>
-            <option value="es">EspaÃ±ol</option>
+            <option value="es">Español</option>
         </select>
 
         <div class="search-box">
